@@ -4,10 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host & (yarn run typed-scss:dev)",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint:dev": "yarn prettier && yarn lint --fix",
+    "prettier": "prettier ./src --write"
   },
   "dependencies": {
     "@emotion/react": "^11.13.5",
