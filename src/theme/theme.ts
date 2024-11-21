@@ -4,7 +4,7 @@ export const theme = createTheme({
 	typography: {
 		fontFamily: "Outfit, sans-serif",
 		allVariants: {
-			color: '#FFFFFF'
+			color: "#FFFFFF",
 		},
 		h1: {
 			fontWeight: 300,
