@@ -1,6 +1,15 @@
 import { createTheme } from "@mui/material";
 
 export const theme = createTheme({
+	palette: {
+		primary: {
+			main: "#fc4747",
+		},
+		background: {
+			default: "#10141E",
+			paper: "#161D2F",
+		},
+	},
 	typography: {
 		fontFamily: "Outfit, sans-serif",
 		allVariants: {
@@ -42,6 +51,22 @@ export const theme = createTheme({
 			fontWeight: 300,
 			fontSize: "0.94rem",
 			letterSpacing: 0,
+		},
+	},
+	components: {
+		MuiButton: {
+			styleOverrides: {
+				root: {
+					width: "100%",
+					paddingTop: "11px",
+					paddingBottom: "11px",
+					borderRadius: "6px",
+					":hover": {
+						backgroundColor: "#FFF",
+						color: "#161D2F",
+					},
+				},
+			},
 		},
 	},
 });
