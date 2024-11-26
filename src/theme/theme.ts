@@ -3,11 +3,17 @@ import { createTheme } from "@mui/material";
 export const theme = createTheme({
 	palette: {
 		primary: {
-			main: "#fc4747",
+			main: "#FC4747",
 		},
 		background: {
 			default: "#10141E",
 			paper: "#161D2F",
+		},
+		text: {
+			primary: "#FFFFFF",
+		},
+		error: {
+			main: "#FC4747",
 		},
 	},
 	typography: {
@@ -36,12 +42,12 @@ export const theme = createTheme({
 			fontSize: "1rem",
 			letterSpacing: 0,
 		},
-		body1: {
+		overline: {
 			fontWeight: 300,
 			fontSize: "0.94rem",
 			letterSpacing: 0,
 		},
-		body2: {
+		caption: {
 			fontWeight: 300,
 			fontSize: "0.8rem",
 			letterSpacing: 0,
@@ -57,14 +63,42 @@ export const theme = createTheme({
 		MuiButton: {
 			styleOverrides: {
 				root: {
-					width: "100%",
-					paddingTop: "11px",
-					paddingBottom: "11px",
+					paddingTop: "0.687rem",
+					paddingBottom: "0.687rem",
 					borderRadius: "6px",
 					":hover": {
 						backgroundColor: "#FFF",
 						color: "#161D2F",
 					},
+				},
+			},
+		},
+		MuiInput: {
+			styleOverrides: {
+				root: {
+					".MuiInput:not(.Mui-error)": {
+						borderBottom: "1px solid #5A698F",
+					},
+					":hover:not(.Mui-disabled, .Mui-error):before": {
+						borderBottom: "1px solid #FFF",
+					},
+					":after": {
+						borderBottom: "1px solid #FFFFFF",
+					},
+				},
+				input: {
+					caretColor: "#FC4747",
+					cursor: "pointer",
+					paddingLeft: "0.812rem",
+					paddingBottom: "1rem",
+					paddingTop: "1.5rem",
+				},
+			},
+		},
+		MuiInputAdornment: {
+			styleOverrides: {
+				root: {
+					paddingTop: "0.687rem",
 				},
 			},
 		},
