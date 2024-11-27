@@ -89,7 +89,7 @@ export const theme = createTheme({
         input: {
           caretColor: "#FC4747",
           cursor: "pointer",
-          paddingLeft: "0.812rem",
+          paddingLeft: "1rem",
           paddingBottom: "1rem",
           paddingTop: "1.5rem",
         },

@@ -1,6 +1,6 @@
 import React, { StrictMode } from "react";
 
-import Input from "@elements/Input";
+import InputSearch from "@components";
 import { Container, CssBaseline, ThemeProvider } from "@mui/material";
 import { theme } from "@theme/theme";
 
@@ -10,22 +10,7 @@ const App: React.FC = () => {
       <ThemeProvider theme={theme}>
         <CssBaseline>
           <Container sx={{ margin: "20px auto" }}>
-            <Input
-              error
-              helperText="Can't be empty"
-              type="email"
-              placeholder="Email address"
-            />
-            <Input
-              helperText="Can't be empty"
-              type="password"
-              placeholder="Password"
-            />
-            <Input
-              helperText="Can't be empty"
-              type="password"
-              placeholder="Repeat Password"
-            />
+            <InputSearch />
           </Container>
         </CssBaseline>
       </ThemeProvider>
