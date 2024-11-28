@@ -1,6 +1,6 @@
 import React, { StrictMode } from "react";
 
-import InputSearch from "@components";
+import BookmarkIcon from "@components/BookmarkIcon";
 import { Container, CssBaseline, ThemeProvider } from "@mui/material";
 import { theme } from "@theme/theme";
 
@@ -10,7 +10,8 @@ const App: React.FC = () => {
       <ThemeProvider theme={theme}>
         <CssBaseline>
           <Container sx={{ margin: "20px auto" }}>
-            <InputSearch />
+            <BookmarkIcon />
+            <BookmarkIcon isActive/>
           </Container>
         </CssBaseline>
       </ThemeProvider>
