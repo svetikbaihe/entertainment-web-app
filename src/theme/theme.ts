@@ -6,8 +6,7 @@ export const theme = createTheme({
       main: "#FC4747",
     },
     background: {
-      //default color to be changed back to "#10141E" after approving
-      default: "#F8E6C3",
+      default: "#10141E",
       paper: "#161D2F",
     },
     text: {
@@ -40,7 +39,7 @@ export const theme = createTheme({
     },
     h4: {
       fontWeight: 500,
-      fontSize: "1rem",
+      fontSize: "1.125rem",
       letterSpacing: 0,
     },
     overline: {
@@ -85,6 +84,14 @@ export const theme = createTheme({
               backgroundColor: "#FFFFFF",
               borderColor: "#FFFFFF",
             },
+          },
+          "&.MuiButton-text": {
+            backgroundColor: "rgba(255, 255, 255, 0.25)",
+            color: "#FFFFFF",
+            borderRadius: "28.5px",
+            minWidth: "7.3rem",
+            paddingRight: "1.68rem",
+            minHeight: "3rem",
           },
         },
       },
