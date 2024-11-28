@@ -11,8 +11,7 @@ const App: React.FC = () => {
         <CssBaseline>
           <Container sx={{ margin: "20px auto" }}>
             <BookmarkIcon />
-            <BookmarkIcon />
-            <BookmarkIcon />
+            <BookmarkIcon isActive/>
           </Container>
         </CssBaseline>
       </ThemeProvider>

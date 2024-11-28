@@ -5,7 +5,7 @@ import { Button } from "@mui/material";
 
 import type { BookmarkIconProps } from "./types";
 
-const BookmarkIcon: React.FC<BookmarkIconProps> = () => {
+const BookmarkIcon: React.FC<BookmarkIconProps> = ({isActive}) => {
   return (
     <Button
       variant="outlined"
@@ -16,13 +16,15 @@ const BookmarkIcon: React.FC<BookmarkIconProps> = () => {
             fill: "transparent",
             stroke: "#FFF",
             strokeWidth: "2px",
+            ...(isActive && {
+              fill: "#FFFFFF"
+            })
           }}
         />
       }
       sx={{
         "& .MuiButton-startIcon": { margin: 0 },
         "&:hover .MuiButton-startIcon svg": { stroke: "#10141E" },
-        "&:focus .MuiButton-startIcon svg": { fill: "#FFFFFF" },
       }}
     />
   );
