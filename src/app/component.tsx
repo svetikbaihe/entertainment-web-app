@@ -4,13 +4,16 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { theme } from "@theme/theme";
 
 import RoutesProvider from "./providers/Routes";
+import ReduxProvider from "./providers/Store";
 
 const App: React.FC = () => {
   return (
     <StrictMode>
       <ThemeProvider theme={theme}>
         <CssBaseline>
-          <RoutesProvider />
+          <ReduxProvider>
+            <RoutesProvider />
+          </ReduxProvider>
         </CssBaseline>
       </ThemeProvider>
     </StrictMode>
