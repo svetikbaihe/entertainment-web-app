@@ -3,7 +3,7 @@ import type React from "react";
 import { ROUTES, RoutesKeys } from "@constants/routes";
 
 const BookmarkedMovies: React.FC = () => {
-  return <div>Bookmarked Movies Page</div>;
+  return <div></div>;
 };
 
 BookmarkedMovies.displayName =
