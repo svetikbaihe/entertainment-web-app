@@ -11,12 +11,21 @@ import {
   sidebar,
   sidebarBtn,
   sidebarLogo,
+  activePageBtn
 } from "./styles";
 import { SidebarProps } from "./types";
 
 const Sidebar: React.FC<SidebarProps> = ({ avatarSrc }) => {
-  const { handleToBookmarked, handleToHome, handleToMovies, handleToTvSeries } =
-    useContainer();
+  const {
+    isActiveBookmarked,
+    isActiveHome,
+    isActiveMovies,
+    isActiveTVSeries,
+    handleToBookmarked,
+    handleToHome,
+    handleToMovies,
+    handleToTvSeries,
+  } = useContainer();
   return (
     <AppBar component="aside" position="sticky" sx={sidebar}>
       <Box component="img" src="/icons/logo.svg" alt="Logo" sx={sidebarLogo} />
@@ -27,7 +36,7 @@ const Sidebar: React.FC<SidebarProps> = ({ avatarSrc }) => {
           startIcon={<WindowIcon />}
           disableRipple
           onClick={handleToHome}
-          sx={sidebarBtn}
+          sx={[sidebarBtn, isActiveHome && activePageBtn]}
         />
 
         <Button
@@ -35,7 +44,7 @@ const Sidebar: React.FC<SidebarProps> = ({ avatarSrc }) => {
           startIcon={<LocalMovies />}
           disableRipple
           onClick={handleToMovies}
-          sx={sidebarBtn}
+          sx={[sidebarBtn, isActiveMovies && activePageBtn]}
         />
 
         <Button
@@ -43,7 +52,7 @@ const Sidebar: React.FC<SidebarProps> = ({ avatarSrc }) => {
           startIcon={<Tv />}
           disableRipple
           onClick={handleToTvSeries}
-          sx={sidebarBtn}
+          sx={[sidebarBtn, isActiveTVSeries && activePageBtn]}
         />
 
         <Button
@@ -51,7 +60,7 @@ const Sidebar: React.FC<SidebarProps> = ({ avatarSrc }) => {
           startIcon={<Bookmark />}
           disableRipple
           onClick={handleToBookmarked}
-          sx={sidebarBtn}
+          sx={[sidebarBtn, isActiveBookmarked && activePageBtn]}
         />
       </Box>
 

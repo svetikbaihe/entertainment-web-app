@@ -9,8 +9,9 @@ export const sidebar: SxProps<Theme> = {
   backgroundColor: theme.palette.background.paper,
   p: "1rem",
   [theme.breakpoints.up("sm")]: {
-    mt: "1.43rem",
+    my: "1.43rem",
     borderRadius: "10px",
+    maxHeight: "100dvh",
   },
   [theme.breakpoints.up("laptop")]: {
     flexDirection: "column",
@@ -52,6 +53,9 @@ export const sidebarBtn = {
     [theme.breakpoints.up("sm")]: {
       fontSize: "1.68rem",
     },
+    ":active": {
+      color: "#FC4747",
+    },
   },
 };
 
@@ -67,4 +71,8 @@ export const avatar = {
     width: "2.5rem",
     height: "2.5rem",
   },
+};
+
+export const activePageBtn = {
+  color: "#FFF",
 };

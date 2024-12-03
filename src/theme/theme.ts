@@ -88,9 +88,6 @@ export const theme = createTheme({
                 ":active": {
                   color: "#FC4747",
                 },
-                ":focus": {
-                  color: "#FFF",
-                },
                 "& .MuiButton-startIcon": {
                   margin: 0,
                 },
