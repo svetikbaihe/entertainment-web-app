@@ -16,6 +16,16 @@ export const theme = createTheme({
       main: "#FC4747",
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+      laptop: 1024,
+    },
+  },
   typography: {
     fontFamily: "Outfit, sans-serif",
     allVariants: {
@@ -63,11 +73,35 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
+          variants: [
+            {
+              props: {
+                variant: "icon",
+              },
+              style: {
+                color: "#5A698F",
+                minWidth: 0,
+                padding: 0,
+                ":hover": {
+                  color: "#FC4747",
+                },
+                ":active": {
+                  color: "#FC4747",
+                },
+                ":focus": {
+                  color: "#FFF",
+                },
+                "& .MuiButton-startIcon": {
+                  margin: 0,
+                },
+              },
+            },
+          ],
           "&.MuiButton-contained": {
             paddingTop: "0.687rem",
             paddingBottom: "0.687rem",
             borderRadius: "6px",
-            "&:hover": {
+            ":hover": {
               backgroundColor: "#FFF",
               color: "#161D2F",
             },

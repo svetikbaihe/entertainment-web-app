@@ -4,7 +4,6 @@ import { counterActions, counterSelectors } from "@modules/Counter";
 import { useGetLocalDataQuery } from "@state/rootQuery";
 import { useDispatch, useSelector } from "react-redux";
 
-
 const useContainer = () => {
   const dispatch = useDispatch();
   const { data, isLoading } = useGetLocalDataQuery(null);
