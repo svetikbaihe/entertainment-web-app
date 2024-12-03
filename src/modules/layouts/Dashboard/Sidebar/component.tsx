@@ -11,7 +11,7 @@ import {
   sidebar,
   sidebarBtn,
   sidebarLogo,
-  activePageBtn
+  activePageBtn,
 } from "./styles";
 import { SidebarProps } from "./types";
 

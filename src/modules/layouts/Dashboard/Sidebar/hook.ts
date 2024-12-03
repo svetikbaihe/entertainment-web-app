@@ -12,7 +12,8 @@ const useContainer = () => {
 
   const isActiveTVSeries = matches.at(-1)?.id === RoutesKeys.TV_SERIES;
 
-  const isActiveBookmarked = matches.at(-1)?.id === RoutesKeys.BOOKMARKED_MOVIES;
+  const isActiveBookmarked =
+    matches.at(-1)?.id === RoutesKeys.BOOKMARKED_MOVIES;
 
   const handleToHome = () => {
     navigate(RoutesPath.HOME);
