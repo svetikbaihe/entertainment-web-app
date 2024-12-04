@@ -27,6 +27,7 @@ export default defineConfig({
       "@assets": path.resolve("src/assets"),
       "@hooks": path.resolve("src/hooks"),
       "@app": path.resolve("src/app"),
+      "@type": path.resolve("src/type"),
     },
   },
 });

@@ -3,13 +3,13 @@ import type React from "react";
 import { LAYOUT, LayoutKeys } from "@constants/layouts";
 import { Outlet } from "react-router-dom";
 
-import Sidebar from "./Sidebar";
+import useContainer from "./hook";
 
 const DashboardLayout: React.FC = () => {
+  useContainer();
+
   return (
     <>
-      {/* <div>this is a dashboard layout</div> */}
-      <Sidebar avatarSrc="/images/image-avatar.png" />
       <Outlet />
     </>
   );
