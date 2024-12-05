@@ -1,7 +1,9 @@
 import type React from "react";
 
+
 import MediaCard from "@modules/MediaCard";
 import { Box, Typography } from "@mui/material";
+import { FormattedMessage } from "react-intl";
 
 import useContainer from "./hook";
 import { trendingTitle, trendingMediaSection } from "./styles";
@@ -10,9 +12,9 @@ const TrendingSection: React.FC = () => {
   const { trendingData, isTablet } = useContainer();
 
   return (
-    <>
+    <Box>
       <Typography variant="h1" sx={trendingTitle(isTablet)}>
-        Trending
+        <FormattedMessage id="trending.title" />
       </Typography>
       <Box sx={trendingMediaSection}>
         {trendingData?.map(item => (
@@ -30,7 +32,7 @@ const TrendingSection: React.FC = () => {
           />
         ))}
       </Box>
-    </>
+    </Box>
   );
 };
 

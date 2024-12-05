@@ -15,24 +15,24 @@ export const mediaInfoUl = (isOnThumbnail: boolean) => ({
   listStyle: "none",
   alignItems: "center",
   "& li": {
-    marginRight: "6px",
+    marginRight: "0.375rem",
     display: "flex",
     alignItems: "center",
   },
   "& li:not(:first-of-type)::before": {
     content: "'•'",
-    marginRight: "6px",
+    marginRight: "0.375rem",
     display: "inline-block",
     verticalAlign: "middle",
   },
 });
 
 export const mediaInfoLi = (isTablet: boolean) => ({
-  ...(!isTablet && { fontSize: "12px" }),
+  ...(!isTablet && { fontSize: "0.75rem" }),
 });
 
 export const categoryIcon = {
-  marginRight: "6px",
+  marginRight: "0.375rem",
   fontSize: "1rem",
 };
 

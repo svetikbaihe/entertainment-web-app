@@ -1,3 +1,7 @@
+import { ElementType, ReactElement, ReactNode } from "react";
+
+import { MessageDescriptor } from "react-intl";
+
 export interface MediaItem {
   title: string;
   thumbnail: Thumbnail;
@@ -22,4 +26,12 @@ export interface Regular {
   small: string;
   medium: string;
   large: string;
+}
+
+export interface IntlMessage<
+  V extends Record<string, unknown> = Record<string, ReactNode>,
+> extends MessageDescriptor {
+  values?: V;
+  tagName?: ElementType;
+  children?(nodes: Iterable<ReactNode>): ReactElement | null;
 }

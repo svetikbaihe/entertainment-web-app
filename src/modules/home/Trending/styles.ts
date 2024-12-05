@@ -7,5 +7,4 @@ export const trendingMediaSection = {
   display: "flex",
   gap: "1rem",
   overflowX: "scroll",
-  overflowY: "hidden",
 };

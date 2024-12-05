@@ -28,6 +28,7 @@ export default defineConfig({
       "@hooks": path.resolve("src/hooks"),
       "@app": path.resolve("src/app"),
       "@type": path.resolve("src/type"),
+      "@locales": path.resolve("src/locales"),
     },
   },
 });

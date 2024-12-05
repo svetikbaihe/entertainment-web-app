@@ -45,7 +45,10 @@
       "@hooks/*": ["./hooks/*"],
 
       "@type": ["./type"],
-      "@type/*": ["./type/*"]
+      "@type/*": ["./type/*"],
+
+      "@locales": ["./locales"],
+      "@locales/*": ["./locales/*"]
     },
     "strict": true,
     "skipLibCheck": true,

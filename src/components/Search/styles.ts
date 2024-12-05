@@ -19,6 +19,7 @@ export const inputSearch = (theme: Theme) => ({
   "&:after": {
     borderBottom: "1px solid #5A698F",
   },
+  fontWeight: 300,
   [theme.breakpoints.up("sm")]: {
     fontSize: theme.typography.h2.fontSize,
     "& .MuiInput-input": {
