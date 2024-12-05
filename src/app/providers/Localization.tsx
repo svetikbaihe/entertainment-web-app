@@ -1,6 +1,5 @@
 import type React from "react";
 
-
 import localesEn from "@locales/en";
 import localesUk from "@locales/uk";
 import { IntlProvider } from "react-intl";

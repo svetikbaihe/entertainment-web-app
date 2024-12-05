@@ -4,6 +4,7 @@ import type React from "react";
 import MediaCard from "@modules/MediaCard";
 import { Box, Typography } from "@mui/material";
 import { FormattedMessage } from "react-intl";
+import { v4 as uuid } from "uuid";
 
 import useContainer from "./hook";
 import { trendingTitle, trendingMediaSection } from "./styles";
@@ -29,6 +30,7 @@ const TrendingSection: React.FC = () => {
             textCategory={item.category}
             textRating={item.rating}
             isOnThumbnail={item.isTrending}
+            key={uuid()}
           />
         ))}
       </Box>
