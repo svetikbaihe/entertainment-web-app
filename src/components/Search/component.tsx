@@ -4,15 +4,25 @@ import Input from "@elements/Input";
 import { Search } from "@mui/icons-material";
 import { InputAdornment } from "@mui/material";
 
+import useContainer from "./hook";
 import { inputSearchIcon, inputSearch, inputAdornment } from "./styles";
 import { InputSearchProps } from "./types";
 
 const InputSearch: React.FC<InputSearchProps> = ({ placeholder }) => {
+  const { intl } = useContainer();
+
   return (
     <Input
       fullWidth
       type="text"
-      placeholder={placeholder}
+      placeholder={
+        typeof placeholder === "string"
+          ? placeholder
+          : intl.formatMessage({
+              id: placeholder.id,
+              defaultMessage: placeholder.defaultMessage,
+            })
+      }
       startAdornment={
         <InputAdornment position="start" sx={inputAdornment}>
           <Search sx={inputSearchIcon} />

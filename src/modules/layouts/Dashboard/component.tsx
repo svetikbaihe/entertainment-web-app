@@ -1,17 +1,21 @@
 import type React from "react";
 
 import { LAYOUT, LayoutKeys } from "@constants/layouts";
+import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
+import useContainer from "./hook";
 import Sidebar from "./Sidebar";
+import { dashboard } from "./styles";
 
 const DashboardLayout: React.FC = () => {
+  const { isDesktop } = useContainer();
+
   return (
-    <>
-      {/* <div>this is a dashboard layout</div> */}
+    <Box sx={dashboard(isDesktop)}>
       <Sidebar avatarSrc="/images/image-avatar.png" />
       <Outlet />
-    </>
+    </Box>
   );
 };
 

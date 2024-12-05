@@ -1,7 +1,7 @@
 import type React from "react";
 
 import { Bookmark, LocalMovies, Tv } from "@mui/icons-material";
-import WindowIcon from "@mui/icons-material/Window";
+import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
 import { AppBar, Avatar, Box, Button } from "@mui/material";
 
 import useContainer from "./hook";
@@ -33,7 +33,7 @@ const Sidebar: React.FC<SidebarProps> = ({ avatarSrc }) => {
       <Box sx={btnContainer}>
         <Button
           variant="icon"
-          startIcon={<WindowIcon />}
+          startIcon={<GridViewRoundedIcon />}
           disableRipple
           onClick={handleToHome}
           sx={[sidebarBtn, isActiveHome && activePageBtn]}

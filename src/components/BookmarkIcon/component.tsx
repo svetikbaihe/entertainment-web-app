@@ -6,12 +6,12 @@ import { Button } from "@mui/material";
 import { bookMarkIcon, bookMarkButton } from "./styles";
 import type { BookmarkIconProps } from "./types";
 
-const BookmarkIcon: React.FC<BookmarkIconProps> = ({ isActive = false }) => {
+const BookmarkIcon: React.FC<BookmarkIconProps> = () => {
   return (
     <Button
       variant="outlined"
       size="small"
-      startIcon={<Bookmark sx={bookMarkIcon(isActive)} />}
+      startIcon={<Bookmark sx={[bookMarkIcon]} />}
       sx={bookMarkButton}
     />
   );

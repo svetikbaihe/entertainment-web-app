@@ -1,4 +1,4 @@
-export const boxThumbnail = {
+export const boxThumbnail = (isTablet: boolean) => ({
   "&:hover": {
     cursor: "pointer",
   },
@@ -11,12 +11,19 @@ export const boxThumbnail = {
     justifyContent: "space-around",
     alignItems: "center",
   },
-  marginRight: "30px",
+  marginRight: "1.875rem",
   display: "inline-block",
   minHeight: "6.875rem",
   position: "relative",
   borderRadius: "8px",
-};
+  margin: 0,
+  width: "15rem",
+  height: "8.75rem",
+  ...(isTablet && {
+    width: "29.37rem",
+    height: "14.37rem",
+  }),
+});
 
 export const boxThumbnailMedia = {
   borderRadius: "8px",

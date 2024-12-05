@@ -42,7 +42,13 @@
       "@app/*": ["./app/*"],
       
       "@hooks": ["./hooks"],
-      "@hooks/*": ["./hooks/*"]
+      "@hooks/*": ["./hooks/*"],
+
+      "@type": ["./type"],
+      "@type/*": ["./type/*"],
+
+      "@locales": ["./locales"],
+      "@locales/*": ["./locales/*"]
     },
     "strict": true,
     "skipLibCheck": true,

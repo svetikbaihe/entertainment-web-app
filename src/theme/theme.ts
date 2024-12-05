@@ -56,6 +56,7 @@ export const theme = createTheme({
       fontWeight: 300,
       fontSize: "0.94rem",
       letterSpacing: 0,
+      textTransform: "none",
     },
     caption: {
       fontWeight: 300,
