@@ -18,12 +18,11 @@ export const theme = createTheme({
   },
   breakpoints: {
     values: {
-      xs: 0,
-      sm: 600,
-      md: 900,
-      lg: 1200,
-      xl: 1536,
-      laptop: 1024,
+      xs: 480,
+      sm: 768,
+      md: 1024,
+      lg: 1440,
+      xl: 1600,
     },
   },
   typography: {
@@ -31,23 +30,23 @@ export const theme = createTheme({
     allVariants: {
       color: "#FFFFFF",
     },
-    h1: {
+    h2: {
       fontWeight: 300,
       fontSize: "2rem",
       letterSpacing: "-0.03em",
     },
-    h2: {
+    h3: {
       fontWeight: 300,
       fontSize: "1.5rem",
       letterSpacing: 0,
     },
-    h3: {
+    h4: {
       fontWeight: 500,
       fontSize: "1.5rem",
       lineHeight: 1.2,
       letterSpacing: 0,
     },
-    h4: {
+    h5: {
       fontWeight: 500,
       fontSize: "1.125rem",
       letterSpacing: 0,

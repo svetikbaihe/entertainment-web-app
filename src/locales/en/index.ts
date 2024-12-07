@@ -1,5 +1,6 @@
 import { trendingEn } from "@modules/home/Trending";
 import { homeEn } from "@pages/Home";
+import { recommendedEn } from "@modules/home/Recommended";
 
 import shared from "./shared";
 import yup from "./yup";
@@ -12,5 +13,6 @@ export default {
     ...yup,
     ...trendingEn,
     ...homeEn,
+    ...recommendedEn,
   },
 };
