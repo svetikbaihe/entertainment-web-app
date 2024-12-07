@@ -21,7 +21,7 @@ export const inputSearch = (theme: Theme) => ({
   },
   fontWeight: 300,
   [theme.breakpoints.up("sm")]: {
-    fontSize: theme.typography.h2.fontSize,
+    fontSize: theme.typography.h3.fontSize,
     "& .MuiInput-input": {
       paddingLeft: "1.4rem",
     },

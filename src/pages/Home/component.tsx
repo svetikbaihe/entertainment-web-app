@@ -7,6 +7,7 @@ import { Box } from "@mui/material";
 
 import useContainer from "./hook";
 import { home } from "./styles";
+import RecommendedSection from "@modules/home/Recommended";
 
 const Home: React.FC = () => {
   const { isDesktop } = useContainer();
@@ -15,6 +16,8 @@ const Home: React.FC = () => {
       <InputSearch placeholder={{ id: "home.inputSearch.placeholder" }} />
 
       <TrendingSection />
+
+      <RecommendedSection/>
     </Box>
   );
 };

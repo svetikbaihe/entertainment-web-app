@@ -13,11 +13,11 @@ const TrendingSection: React.FC = () => {
   const { trendingData, isTablet } = useContainer();
 
   return (
-    <Box>
-      <Typography variant="h1" sx={trendingTitle(isTablet)}>
+    <Box sx={{overflow: "scroll"}}>
+      <Typography variant="h2" sx={trendingTitle(isTablet)}>
         <FormattedMessage id="trending.title" />
       </Typography>
-      <Box sx={trendingMediaSection}>
+      <Box sx={trendingMediaSection(isTablet)}>
         {trendingData?.map(item => (
           <MediaCard
             thumbnailSrc={

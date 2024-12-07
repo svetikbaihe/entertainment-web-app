@@ -3,21 +3,17 @@ export const mediaCard = {
   m: 0,
 };
 
-export const mediaInfoUl = (isOnThumbnail: boolean) => ({
-  ...(isOnThumbnail && {
-    position: "absolute",
-    bottom: "24%",
-    left: "6%",
-    p: 0,
-    m: 0,
-  }),
+export const mediaInfoUl = {
   display: "inline-flex",
   listStyle: "none",
   alignItems: "center",
+  p: 0,
+  m: 0,
   "& li": {
     marginRight: "0.375rem",
     display: "flex",
     alignItems: "center",
+    lineHeight: 0
   },
   "& li:not(:first-of-type)::before": {
     content: "'•'",
@@ -25,7 +21,7 @@ export const mediaInfoUl = (isOnThumbnail: boolean) => ({
     display: "inline-block",
     verticalAlign: "middle",
   },
-});
+};
 
 export const mediaInfoLi = (isTablet: boolean) => ({
   ...(!isTablet && { fontSize: "0.75rem" }),
@@ -36,11 +32,7 @@ export const categoryIcon = {
   fontSize: "1rem",
 };
 
-export const mediaCardTitle = (isOnThumbnail: boolean) => ({
-  ...(isOnThumbnail && {
-    position: "absolute",
-    bottom: "8%",
-    left: "6%",
-  }),
+export const mediaCardTitle = {
   fontWeight: "500",
-});
+  lineHeight: 0.9
+};

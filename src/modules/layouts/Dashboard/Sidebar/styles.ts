@@ -13,7 +13,7 @@ export const sidebar: SxProps<Theme> = {
     borderRadius: "10px",
     maxHeight: "100dvh",
   },
-  [theme.breakpoints.up("laptop")]: {
+  [theme.breakpoints.up("lg")]: {
     flexDirection: "column",
     maxWidth: "6rem",
     height: "60rem",
@@ -30,7 +30,7 @@ export const sidebarLogo = {
     width: "2rem",
     height: "1.6rem",
   },
-  [theme.breakpoints.up("laptop")]: {
+  [theme.breakpoints.up("lg")]: {
     marginBottom: "1.75rem",
   },
 };
@@ -41,7 +41,7 @@ export const btnContainer = {
   [theme.breakpoints.up("sm")]: {
     fontSize: "1.9rem",
   },
-  [theme.breakpoints.up("laptop")]: {
+  [theme.breakpoints.up("lg")]: {
     flexDirection: "column",
     flex: "1 1 auto",
   },

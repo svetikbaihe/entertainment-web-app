@@ -3,8 +3,10 @@ export const trendingTitle = (isTablet: boolean) => ({
   ...(!isTablet && { fontSize: "20px", fontWeight: 300 }),
 });
 
-export const trendingMediaSection = {
+export const trendingMediaSection = (isTablet: boolean) => ({
   display: "flex",
   gap: "1rem",
-  overflowX: "scroll",
-};
+  ...(isTablet && {
+    gap: "2rem",
+  })
+});
