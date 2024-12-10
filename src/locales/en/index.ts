@@ -1,6 +1,6 @@
-import { trendingEn } from "@modules/home/Trending";
 import { homeEn } from "@modules/home/Home";
 import { recommendedEn } from "@modules/home/Recommended";
+import { trendingEn } from "@modules/home/Trending";
 import { searchResultsEn } from "@modules/SearchResults";
 
 import shared from "./shared";

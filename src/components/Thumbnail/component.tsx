@@ -1,5 +1,6 @@
 import type React from "react";
 
+import useResponsive from "@hooks/useMediaQuery";
 import { PlayCircle } from "@mui/icons-material";
 import { Box, Button, Typography } from "@mui/material";
 
@@ -11,7 +12,6 @@ import {
   boxThumbnailTrending,
 } from "./styles";
 import type { ThumbnailProps } from "./types";
-import useResponsive from "@hooks/useMediaQuery";
 
 const Thumbnail: React.FC<ThumbnailProps> = ({
   src,

@@ -1,12 +1,14 @@
 import type React from "react";
-import useContainer from "./hook";
+
+import useResponsive from "@hooks/useMediaQuery";
+import MediaCard from "@modules/MediaCard";
 import { Box, Typography } from "@mui/material";
 import { FormattedMessage } from "react-intl";
-import MediaCard from "@modules/MediaCard";
 import { v4 as uuid } from "uuid";
+
+import useContainer from "./hook";
 import { recommendedMediaContainer, recommendedTitle } from "./styles";
 import { SearchResultsProps } from "./types";
-import useResponsive from "@hooks/useMediaQuery";
 
 const SearchResults: React.FC<SearchResultsProps> = ({
   isSearched,

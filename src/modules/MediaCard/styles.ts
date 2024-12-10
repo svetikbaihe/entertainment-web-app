@@ -13,7 +13,7 @@ export const mediaInfoUl = {
     marginRight: "0.375rem",
     display: "flex",
     alignItems: "center",
-    lineHeight: 0
+    lineHeight: 0,
   },
   "& li:not(:first-of-type)::before": {
     content: "'•'",
@@ -34,5 +34,5 @@ export const categoryIcon = {
 
 export const mediaCardTitle = {
   fontWeight: "500",
-  lineHeight: 0.9
+  lineHeight: 0.9,
 };

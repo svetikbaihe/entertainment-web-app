@@ -12,6 +12,6 @@ export const recommendedMediaContainer = (
   gridTemplateColumns: "1fr",
   gap: "1rem",
   ...(isMobile && { gridTemplateColumns: "repeat(2, auto)" }),
-  ...(isTablet && { gridTemplateColumns: "repeat(3, auto)"}),
-  ...(isDesktop && { gridTemplateColumns: "repeat(4, auto)", gap: "2rem"  }),
+  ...(isTablet && { gridTemplateColumns: "repeat(3, auto)" }),
+  ...(isDesktop && { gridTemplateColumns: "repeat(4, auto)", gap: "2rem" }),
 });

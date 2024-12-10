@@ -1,11 +1,13 @@
-import { Box, Typography } from "@mui/material";
 import type React from "react";
-import { recommendedTitle, recommendedMediaContainer } from "./styles";
-import useContainer from "./hook";
-import { v4 as uuid } from "uuid";
-import MediaCard from "@modules/MediaCard";
-import { FormattedMessage } from "react-intl";
+
 import useResponsive from "@hooks/useMediaQuery";
+import MediaCard from "@modules/MediaCard";
+import { Box, Typography } from "@mui/material";
+import { FormattedMessage } from "react-intl";
+import { v4 as uuid } from "uuid";
+
+import useContainer from "./hook";
+import { recommendedTitle, recommendedMediaContainer } from "./styles";
 
 const RecommendedSection: React.FC = () => {
   const { notTrendingData } = useContainer();

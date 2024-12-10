@@ -1,8 +1,8 @@
 import { counterReducerName, counterReducer } from "@modules/Counter";
+import { homeReducer, homeReducerName } from "@modules/home/Home";
 import { combineReducers } from "@reduxjs/toolkit";
 
 import { localApiSlice } from "./rootQuery";
-import { homeReducer, homeReducerName } from "@modules/home/Home";
 
 const rootReducer = combineReducers({
   [counterReducerName]: counterReducer,

@@ -2,6 +2,7 @@ import type React from "react";
 
 import BookmarkIcon from "@components/BookmarkIcon";
 import Thumbnail from "@components/Thumbnail";
+import useResponsive from "@hooks/useMediaQuery";
 import LocalMoviesRoundedIcon from "@mui/icons-material/LocalMoviesRounded";
 import TvIcon from "@mui/icons-material/Tv";
 import { Box, Typography } from "@mui/material";
@@ -14,7 +15,6 @@ import {
   mediaCardTitle,
 } from "./styles";
 import type { MediaCardProps } from "./types";
-import useResponsive from "@hooks/useMediaQuery";
 
 const MediaCard: React.FC<MediaCardProps> = ({
   textCategory,

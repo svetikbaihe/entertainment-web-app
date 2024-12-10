@@ -2,11 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit";
 
 export interface InitialState {
-  searchValue: string
+  searchValue: string;
 }
 
 export const initialState: InitialState = {
-  searchValue: ''
+  searchValue: "",
 };
 
 const homeSlice = createSlice({
@@ -16,13 +16,13 @@ const homeSlice = createSlice({
     setSearchValue: (state, action: PayloadAction<string>) => {
       state.searchValue = action.payload;
     },
-  }
-})
+  },
+});
 
 export const reducerName = homeSlice.name;
 
 export const reducer = homeSlice.reducer;
 
 export const actions = {
-  ...homeSlice.actions
-}
+  ...homeSlice.actions,
+};

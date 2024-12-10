@@ -1,4 +1,4 @@
 export interface SearchResultsProps {
-  isSearched: boolean,
-  searchedValue: string,
+  isSearched: boolean;
+  searchedValue: string;
 }

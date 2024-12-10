@@ -11,7 +11,7 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   startAdornment,
   sx,
-  onChange
+  onChange,
 }) => {
   return (
     <>
