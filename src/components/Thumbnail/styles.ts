@@ -1,4 +1,4 @@
-export const boxThumbnail = (isTablet: boolean) => ({
+export const boxThumbnail = (isTablet: boolean, isDesktop: boolean) => ({
   "&:hover": {
     cursor: "pointer",
   },
@@ -13,10 +13,22 @@ export const boxThumbnail = (isTablet: boolean) => ({
   },
   marginRight: "1.875rem",
   display: "inline-block",
-  minHeight: "6.875rem",
   position: "relative",
   borderRadius: "8px",
   margin: 0,
+  minWidth: "10.25rem",
+  minHeight: "6.875rem",
+  ...(isTablet && {
+    minWidth: "13.75rem",
+    minHeight: "8.75rem",
+  }),
+  ...(isDesktop && {
+    minWidth: "17.5rem",
+    minHeight: "10.87rem",
+  }),
+});
+
+export const boxThumbnailTrending = (isTablet: boolean) => ({
   width: "15rem",
   height: "8.75rem",
   ...(isTablet && {

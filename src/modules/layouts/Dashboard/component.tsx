@@ -1,6 +1,7 @@
 import type React from "react";
 
 import { LAYOUT, LayoutKeys } from "@constants/layouts";
+import useResponsive from "@hooks/useMediaQuery";
 import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
@@ -9,7 +10,9 @@ import Sidebar from "./Sidebar";
 import { dashboard } from "./styles";
 
 const DashboardLayout: React.FC = () => {
-  const { isDesktop } = useContainer();
+  useContainer();
+
+  const { isDesktop } = useResponsive();
 
   return (
     <Box sx={dashboard(isDesktop)}>

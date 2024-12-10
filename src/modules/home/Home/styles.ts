@@ -4,6 +4,6 @@ export const home = (isDesktop: boolean) => ({
   display: "flex",
   flexDirection: "column",
   gap: "0.75rem",
-  overflow: "auto",
+  overflow: "hidden",
   ...(isDesktop && { marginLeft: "2.18rem", paddingTop: "1.68rem" }),
 });

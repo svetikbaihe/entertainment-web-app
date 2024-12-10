@@ -2,11 +2,11 @@ import type React from "react";
 
 import BookmarkIcon from "@components/BookmarkIcon";
 import Thumbnail from "@components/Thumbnail";
+import useResponsive from "@hooks/useMediaQuery";
 import LocalMoviesRoundedIcon from "@mui/icons-material/LocalMoviesRounded";
 import TvIcon from "@mui/icons-material/Tv";
 import { Box, Typography } from "@mui/material";
 
-import useContainer from "./hook";
 import {
   mediaCard,
   mediaInfoUl,
@@ -24,43 +24,53 @@ const MediaCard: React.FC<MediaCardProps> = ({
   thumbnailSrc,
   isOnThumbnail = false,
 }) => {
-  const { isTablet } = useContainer();
+  const { isTablet } = useResponsive();
 
   return (
     <Box sx={mediaCard}>
-      <Thumbnail src={thumbnailSrc} alt={textTitle} />
+      <Box sx={{ position: "relative", maxWidth: "fit-content" }}>
+        <Thumbnail
+          src={thumbnailSrc}
+          alt={textTitle}
+          isOnThumbnail={isOnThumbnail}
+        />
 
-      <BookmarkIcon />
-
-      <Box component={"ul"} sx={mediaInfoUl(isOnThumbnail)}>
-        <li>
-          <Typography variant="overline" sx={mediaInfoLi(isTablet)}>
-            {textYear}
-          </Typography>
-        </li>
-        <li>
-          {textCategory === "Movie" ? (
-            <LocalMoviesRoundedIcon sx={categoryIcon} />
-          ) : (
-            <TvIcon sx={categoryIcon} />
-          )}
-          <Typography variant="overline" sx={mediaInfoLi(isTablet)}>
-            {textCategory}
-          </Typography>
-        </li>
-        <li>
-          <Typography variant="overline" sx={mediaInfoLi(isTablet)}>
-            {textRating}
-          </Typography>
-        </li>
+        <BookmarkIcon />
       </Box>
 
-      <Typography
-        variant={isTablet ? "h3" : "overline"}
-        sx={mediaCardTitle(isOnThumbnail)}
+      <Box
+        sx={[
+          isOnThumbnail && { position: "absolute", top: "57%", left: "7%" },
+          { display: "inline-flex", flexDirection: "column" },
+        ]}
       >
-        {textTitle}
-      </Typography>
+        <Box component={"ul"} sx={mediaInfoUl}>
+          <li>
+            <Typography variant="overline" sx={mediaInfoLi(isTablet)}>
+              {textYear}
+            </Typography>
+          </li>
+          <li>
+            {textCategory === "Movie" ? (
+              <LocalMoviesRoundedIcon sx={categoryIcon} />
+            ) : (
+              <TvIcon sx={categoryIcon} />
+            )}
+            <Typography variant="overline" sx={mediaInfoLi(isTablet)}>
+              {textCategory}
+            </Typography>
+          </li>
+          <li>
+            <Typography variant="overline" sx={mediaInfoLi(isTablet)}>
+              {textRating}
+            </Typography>
+          </li>
+        </Box>
+
+        <Typography variant={isTablet ? "h4" : "overline"} sx={mediaCardTitle}>
+          {textTitle}
+        </Typography>
+      </Box>
     </Box>
   );
 };
