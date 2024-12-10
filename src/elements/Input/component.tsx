@@ -11,6 +11,7 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   startAdornment,
   sx,
+  onChange
 }) => {
   return (
     <>
@@ -21,6 +22,7 @@ const Input: React.FC<InputProps> = ({
         fullWidth
         type={type}
         startAdornment={startAdornment}
+        onChange={onChange}
         endAdornment={
           <InputAdornment position="end">
             {error && (

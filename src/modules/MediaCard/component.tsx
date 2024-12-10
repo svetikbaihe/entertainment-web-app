@@ -6,7 +6,6 @@ import LocalMoviesRoundedIcon from "@mui/icons-material/LocalMoviesRounded";
 import TvIcon from "@mui/icons-material/Tv";
 import { Box, Typography } from "@mui/material";
 
-import useContainer from "./hook";
 import {
   mediaCard,
   mediaInfoUl,
@@ -15,6 +14,7 @@ import {
   mediaCardTitle,
 } from "./styles";
 import type { MediaCardProps } from "./types";
+import useResponsive from "@hooks/useMediaQuery";
 
 const MediaCard: React.FC<MediaCardProps> = ({
   textCategory,
@@ -24,17 +24,26 @@ const MediaCard: React.FC<MediaCardProps> = ({
   thumbnailSrc,
   isOnThumbnail = false,
 }) => {
-  const { isTablet } = useContainer();
+  const { isTablet } = useResponsive();
 
   return (
     <Box sx={mediaCard}>
-      <Box sx={{position: "relative", maxWidth: "fit-content"}}>
-        <Thumbnail src={thumbnailSrc} alt={textTitle} isOnThumbnail={isOnThumbnail} />
-  
+      <Box sx={{ position: "relative", maxWidth: "fit-content" }}>
+        <Thumbnail
+          src={thumbnailSrc}
+          alt={textTitle}
+          isOnThumbnail={isOnThumbnail}
+        />
+
         <BookmarkIcon />
       </Box>
 
-      <Box sx={[isOnThumbnail && {position: "absolute", top: "57%", left: "7%"}, {display: "inline-flex", flexDirection: "column"}]}>
+      <Box
+        sx={[
+          isOnThumbnail && { position: "absolute", top: "57%", left: "7%" },
+          { display: "inline-flex", flexDirection: "column" },
+        ]}
+      >
         <Box component={"ul"} sx={mediaInfoUl}>
           <li>
             <Typography variant="overline" sx={mediaInfoLi(isTablet)}>
@@ -57,11 +66,8 @@ const MediaCard: React.FC<MediaCardProps> = ({
             </Typography>
           </li>
         </Box>
-  
-        <Typography
-          variant={isTablet ? "h4" : "overline"}
-          sx={mediaCardTitle}
-        >
+
+        <Typography variant={isTablet ? "h4" : "overline"} sx={mediaCardTitle}>
           {textTitle}
         </Typography>
       </Box>

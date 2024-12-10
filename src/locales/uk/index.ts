@@ -1,6 +1,7 @@
 import { trendingUk } from "@modules/home/Trending";
-import { homeUk } from "@pages/Home";
+import { homeUk } from "@modules/home/Home";
 import { recommendedUk } from "@modules/home/Recommended";
+import { searchResultsUk } from "@modules/SearchResults";
 
 import shared from "./shared";
 import yup from "./yup";
@@ -14,5 +15,6 @@ export default {
     ...trendingUk,
     ...homeUk,
     ...recommendedUk,
+    ...searchResultsUk,
   },
 };

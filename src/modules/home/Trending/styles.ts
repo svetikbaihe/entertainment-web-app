@@ -8,5 +8,10 @@ export const trendingMediaSection = (isTablet: boolean) => ({
   gap: "1rem",
   ...(isTablet && {
     gap: "2rem",
-  })
+  }),
+  overflow: "scroll",
+  "&::-webkit-scrollbar": {
+    appearance: "none",
+    width: 0,
+  },
 });

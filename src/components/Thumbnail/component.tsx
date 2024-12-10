@@ -11,14 +11,14 @@ import {
   boxThumbnailTrending,
 } from "./styles";
 import type { ThumbnailProps } from "./types";
-import useContainer from "./hook";
+import useResponsive from "@hooks/useMediaQuery";
 
 const Thumbnail: React.FC<ThumbnailProps> = ({
   src,
   alt,
   isOnThumbnail = false,
 }) => {
-  const { isDesktop, isTablet } = useContainer();
+  const { isDesktop, isTablet } = useResponsive();
 
   return (
     <Box
