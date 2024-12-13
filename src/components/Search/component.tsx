@@ -8,7 +8,7 @@ import useContainer from "./hook";
 import { inputSearchIcon, inputSearch, inputAdornment } from "./styles";
 import { InputSearchProps } from "./types";
 
-const InputSearch: React.FC<InputSearchProps> = ({ placeholder }) => {
+const InputSearch: React.FC<InputSearchProps> = ({ placeholder, onChange }) => {
   const { intl } = useContainer();
 
   return (
@@ -29,6 +29,7 @@ const InputSearch: React.FC<InputSearchProps> = ({ placeholder }) => {
         </InputAdornment>
       }
       sx={inputSearch}
+      onChange={onChange}
     />
   );
 };

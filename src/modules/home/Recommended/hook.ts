@@ -4,9 +4,9 @@ import { useSelector } from "react-redux";
 const useContainer = () => {
   const data = useSelector(localDataSelectors.dataLocalSelector);
 
-  const trendingData = data?.filter(item => item.isTrending);
+  const notTrendingData = data?.filter(item => !item.isTrending);
 
-  return { trendingData };
+  return { notTrendingData };
 };
 
 export default useContainer;
