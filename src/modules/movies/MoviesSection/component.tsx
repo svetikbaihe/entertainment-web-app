@@ -7,20 +7,20 @@ import { FormattedMessage } from "react-intl";
 import { v4 as uuid } from "uuid";
 
 import useContainer from "./hook";
-import { recommendedTitle, recommendedMediaContainer } from "./styles";
+import { mediaTitle, mediaContainer } from "@styles/modules";
 
-const RecommendedSection: React.FC = () => {
+const MoviesSection: React.FC = () => {
   const { moviesData } = useContainer();
 
   const { isTablet, isDesktop, isMobile } = useResponsive();
 
   return (
     <Box>
-      <Typography variant="h2" sx={recommendedTitle(isTablet)}>
+      <Typography variant="h2" sx={mediaTitle(isTablet)}>
         <FormattedMessage id="movies.title" />
       </Typography>
 
-      <Box sx={recommendedMediaContainer(isMobile, isTablet, isDesktop)}>
+      <Box sx={mediaContainer(isMobile, isTablet, isDesktop)}>
         {moviesData?.map(item => (
           <MediaCard
             thumbnailSrc={
@@ -43,4 +43,4 @@ const RecommendedSection: React.FC = () => {
   );
 };
 
-export default RecommendedSection;
+export default MoviesSection;
