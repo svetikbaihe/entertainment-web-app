@@ -3,11 +3,11 @@ import type React from "react";
 import useResponsive from "@hooks/useMediaQuery";
 import MediaCard from "@modules/MediaCard";
 import { Box, Typography } from "@mui/material";
+import { mediaTitle, mediaContainer } from "@styles/modules";
 import { FormattedMessage } from "react-intl";
 import { v4 as uuid } from "uuid";
 
 import useContainer from "./hook";
-import { mediaTitle, mediaContainer } from "@styles/modules";
 
 const MoviesSection: React.FC = () => {
   const { moviesData } = useContainer();
@@ -34,7 +34,6 @@ const MoviesSection: React.FC = () => {
             textYear={item.year}
             textCategory={item.category}
             textRating={item.rating}
-            isOnThumbnail={item.isTrending}
             key={uuid()}
           />
         ))}

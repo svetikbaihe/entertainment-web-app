@@ -1,8 +1,9 @@
 import { homeEn } from "@modules/home/Home";
 import { recommendedEn } from "@modules/home/Recommended";
 import { trendingEn } from "@modules/home/Trending";
-import { searchResultsEn } from "@modules/SearchResults";
+import { moviesInputPlaceholderEn } from "@modules/movies/Movies";
 import { moviesEn } from "@modules/movies/MoviesSection";
+import { searchResultsEn } from "@modules/SearchResults";
 
 import shared from "./shared";
 import yup from "./yup";
@@ -18,5 +19,6 @@ export default {
     ...recommendedEn,
     ...searchResultsEn,
     ...moviesEn,
+    ...moviesInputPlaceholderEn,
   },
 };

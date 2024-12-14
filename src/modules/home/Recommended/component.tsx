@@ -3,11 +3,11 @@ import type React from "react";
 import useResponsive from "@hooks/useMediaQuery";
 import MediaCard from "@modules/MediaCard";
 import { Box, Typography } from "@mui/material";
+import { mediaTitle, mediaContainer } from "@styles/modules";
 import { FormattedMessage } from "react-intl";
 import { v4 as uuid } from "uuid";
 
 import useContainer from "./hook";
-import { recommendedTitle, recommendedMediaContainer } from "./styles";
 
 const RecommendedSection: React.FC = () => {
   const { notTrendingData } = useContainer();
@@ -16,11 +16,11 @@ const RecommendedSection: React.FC = () => {
 
   return (
     <Box>
-      <Typography variant="h2" sx={recommendedTitle(isTablet)}>
+      <Typography variant="h2" sx={mediaTitle(isTablet)}>
         <FormattedMessage id="recommended.title" />
       </Typography>
 
-      <Box sx={recommendedMediaContainer(isMobile, isTablet, isDesktop)}>
+      <Box sx={mediaContainer(isMobile, isTablet, isDesktop)}>
         {notTrendingData?.map(item => (
           <MediaCard
             thumbnailSrc={

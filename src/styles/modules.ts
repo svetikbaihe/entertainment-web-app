@@ -15,3 +15,28 @@ export const mediaContainer = (
   ...(isTablet && { gridTemplateColumns: "repeat(3, auto)" }),
   ...(isDesktop && { gridTemplateColumns: "repeat(4, auto)", gap: "2rem" }),
 });
+
+export const pageWrapper = ({
+  isDesktop,
+  isTablet,
+}: {
+  isDesktop: boolean;
+  isTablet: boolean;
+}) => ({
+  mx: "1.56rem",
+  marginBottom: "1rem",
+  display: "flex",
+  flexDirection: "column",
+  gap: "0.75rem",
+  overflow: "hidden",
+  ...(isTablet && {
+    marginLeft: 0,
+    marginRight: 0,
+    marginTop: 0,
+    marginBottom: 0,
+  }),
+  ...(isDesktop && {
+    marginLeft: "2.18rem",
+    paddingTop: "1.68rem",
+  }),
+});
