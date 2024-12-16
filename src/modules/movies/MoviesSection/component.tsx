@@ -9,19 +9,19 @@ import { v4 as uuid } from "uuid";
 
 import useContainer from "./hook";
 
-const RecommendedSection: React.FC = () => {
-  const { notTrendingData } = useContainer();
+const MoviesSection: React.FC = () => {
+  const { moviesData } = useContainer();
 
   const { isTablet, isDesktop, isMobile } = useResponsive();
 
   return (
     <Box>
       <Typography variant="h2" sx={mediaTitle(isTablet)}>
-        <FormattedMessage id="recommended.title" />
+        <FormattedMessage id="movies.title" />
       </Typography>
 
       <Box sx={mediaContainer(isMobile, isTablet, isDesktop)}>
-        {notTrendingData?.map(item => (
+        {moviesData?.map(item => (
           <MediaCard
             thumbnailSrc={
               isDesktop
@@ -34,7 +34,6 @@ const RecommendedSection: React.FC = () => {
             textYear={item.year}
             textCategory={item.category}
             textRating={item.rating}
-            isOnThumbnail={item.isTrending}
             key={uuid()}
           />
         ))}
@@ -43,4 +42,4 @@ const RecommendedSection: React.FC = () => {
   );
 };
 
-export default RecommendedSection;
+export default MoviesSection;

@@ -1,6 +1,8 @@
 import { homeEn } from "@modules/home/Home";
 import { recommendedEn } from "@modules/home/Recommended";
 import { trendingEn } from "@modules/home/Trending";
+import { moviesInputPlaceholderEn } from "@modules/movies/Movies";
+import { moviesEn } from "@modules/movies/MoviesSection";
 import { searchResultsEn } from "@modules/SearchResults";
 
 import shared from "./shared";
@@ -16,5 +18,7 @@ export default {
     ...homeEn,
     ...recommendedEn,
     ...searchResultsEn,
+    ...moviesEn,
+    ...moviesInputPlaceholderEn,
   },
 };

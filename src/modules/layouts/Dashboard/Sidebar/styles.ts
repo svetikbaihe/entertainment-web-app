@@ -12,6 +12,9 @@ export const sidebar: SxProps<Theme> = {
     my: "1.43rem",
     borderRadius: "10px",
     maxHeight: "100dvh",
+    pl: "1.5rem",
+    py: "1rem",
+    pr: "1rem",
   },
   [theme.breakpoints.up("lg")]: {
     flexDirection: "column",
@@ -31,7 +34,7 @@ export const sidebarLogo = {
     height: "1.6rem",
   },
   [theme.breakpoints.up("lg")]: {
-    marginBottom: "1.75rem",
+    marginBottom: "4.375rem",
   },
 };
 

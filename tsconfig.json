@@ -47,6 +47,9 @@
       "@type": ["./type"],
       "@type/*": ["./type/*"],
 
+      "@styles": ["./styles"],
+      "@styles/*": ["./styles/*"],
+
       "@locales": ["./locales"],
       "@locales/*": ["./locales/*"]
     },
