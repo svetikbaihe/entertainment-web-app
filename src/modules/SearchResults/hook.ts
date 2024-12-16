@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+
 import { RoutesKeys } from "@constants/routes";
 import { localDataSelectors } from "@modules/layouts/Dashboard";
 import { useSelector } from "react-redux";
@@ -21,7 +23,7 @@ const useContainer = ({
   const isTVSeries = matches.at(-1)?.id === RoutesKeys.TV_SERIES;
   const isBookmarked = matches.at(-1)?.id === RoutesKeys.BOOKMARKED_MOVIES;
 
-  const filteredResult = () => {
+  const filteredResult = useMemo(() => {
     if (isHome) {
       return data?.filter(item =>
         item.title.toLowerCase().includes(searchedValue.toLowerCase())
@@ -42,9 +44,19 @@ const useContainer = ({
         item.title.toLowerCase().includes(searchedValue.toLowerCase())
       );
     }
-  };
+  }, [
+    data,
+    bookmarkedData,
+    isBookmarked,
+    isHome,
+    isMovies,
+    isTVSeries,
+    moviesData,
+    searchedValue,
+    tvSeriesData,
+  ]);
 
-  const matchedResult = filteredResult();
+  const matchedResult = filteredResult;
 
   return {
     matchedResult,

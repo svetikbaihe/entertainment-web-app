@@ -11,6 +11,7 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   startAdornment,
   sx,
+  value,
   onChange,
 }) => {
   return (
@@ -32,6 +33,7 @@ const Input: React.FC<InputProps> = ({
             )}
           </InputAdornment>
         }
+        value={value}
       />
     </>
   );

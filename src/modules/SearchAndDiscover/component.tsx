@@ -22,6 +22,7 @@ const SearchAndDiscover: React.FC<SearchAndDiscoverProps> = ({
       <InputSearch
         placeholder={searchPlaceholder}
         onChange={handleSearchChange}
+        value={searchedValue}
       />
 
       {searchedValue.length === 0 && children}
