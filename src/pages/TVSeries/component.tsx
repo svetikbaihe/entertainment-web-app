@@ -1,11 +1,12 @@
 import type React from "react";
 
 import { ROUTES, RoutesKeys } from "@constants/routes";
+import TVSeries from "@modules/tvSeries/TVSeries";
 
-const TVSeries: React.FC = () => {
-  return <div>TV Series Page</div>;
+const TVSeriesPage: React.FC = () => {
+  return <TVSeries />;
 };
 
-TVSeries.displayName = ROUTES[RoutesKeys.TV_SERIES].DISPLAY_NAME;
+TVSeriesPage.displayName = ROUTES[RoutesKeys.TV_SERIES].DISPLAY_NAME;
 
-export default TVSeries;
+export default TVSeriesPage;

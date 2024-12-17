@@ -6,6 +6,8 @@ import { trendingUk } from "@modules/home/Trending";
 import { moviesInputPlaceholderUk } from "@modules/movies/Movies";
 import { moviesUk } from "@modules/movies/MoviesSection";
 import { searchResultsUk } from "@modules/SearchResults";
+import { tvSeriesInputPlaceholderUk } from "@modules/tvSeries/TVSeries";
+import { tvSeriesUk } from "@modules/tvSeries/TVSerieSection";
 
 import shared from "./shared";
 import yup from "./yup";
@@ -24,5 +26,7 @@ export default {
     ...moviesInputPlaceholderUk,
     ...bookmarkedUk,
     ...bookmarkedInputPlaceholderUk,
+    ...tvSeriesUk,
+    ...tvSeriesInputPlaceholderUk,
   },
 };
