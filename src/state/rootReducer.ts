@@ -9,6 +9,10 @@ import {
   dashboardReducerName,
 } from "@modules/layouts/Dashboard";
 import { moviesReducer, moviesReducerName } from "@modules/movies/Movies";
+import {
+  tvSeriesReducer,
+  tvSeriesReducerName,
+} from "@modules/tvSeries/TVSeries";
 import { combineReducers } from "@reduxjs/toolkit";
 
 import { localApiSlice } from "./rootQuery";
@@ -19,6 +23,7 @@ const rootReducer = combineReducers({
   [moviesReducerName]: moviesReducer,
   [bookmarkedReducerName]: bookmarkedReducer,
   [dashboardReducerName]: dashboardReducer,
+  [tvSeriesReducerName]: tvSeriesReducer,
   [localApiSlice.reducerPath]: localApiSlice.reducer,
 });
 
