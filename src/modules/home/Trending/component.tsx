@@ -4,7 +4,6 @@ import useResponsive from "@hooks/useMediaQuery";
 import MediaCard from "@modules/MediaCard";
 import { Box, Typography } from "@mui/material";
 import { FormattedMessage } from "react-intl";
-import { v4 as uuid } from "uuid";
 
 import useContainer from "./hook";
 import { trendingTitle, trendingMediaSection } from "./styles";
@@ -15,7 +14,7 @@ const TrendingSection: React.FC = () => {
   const { isTablet } = useResponsive();
 
   return (
-    <Box>
+    <>
       <Typography variant="h2" sx={trendingTitle(isTablet)}>
         <FormattedMessage id="trending.title" />
       </Typography>
@@ -32,11 +31,13 @@ const TrendingSection: React.FC = () => {
             textCategory={item.category}
             textRating={item.rating}
             isOnThumbnail={item.isTrending}
-            key={uuid()}
+            key={item.id}
+            id={item.id}
+            isBookmarked={item.isBookmarked}
           />
         ))}
       </Box>
-    </Box>
+    </>
   );
 };
 

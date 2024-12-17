@@ -1,3 +1,5 @@
+import { bookmarkedInputPlaceholderEn } from "@modules/bookmarked/BookmarkedMedia";
+import { bookmarkedEn } from "@modules/bookmarked/BookmarkedSection";
 import { homeEn } from "@modules/home/Home";
 import { recommendedEn } from "@modules/home/Recommended";
 import { trendingEn } from "@modules/home/Trending";
@@ -20,5 +22,7 @@ export default {
     ...searchResultsEn,
     ...moviesEn,
     ...moviesInputPlaceholderEn,
+    ...bookmarkedEn,
+    ...bookmarkedInputPlaceholderEn,
   },
 };

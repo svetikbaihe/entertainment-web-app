@@ -1,3 +1,5 @@
+import { bookmarkedInputPlaceholderUk } from "@modules/bookmarked/BookmarkedMedia";
+import { bookmarkedUk } from "@modules/bookmarked/BookmarkedSection";
 import { homeUk } from "@modules/home/Home";
 import { recommendedUk } from "@modules/home/Recommended";
 import { trendingUk } from "@modules/home/Trending";
@@ -20,5 +22,7 @@ export default {
     ...searchResultsUk,
     ...moviesUk,
     ...moviesInputPlaceholderUk,
+    ...bookmarkedUk,
+    ...bookmarkedInputPlaceholderUk,
   },
 };

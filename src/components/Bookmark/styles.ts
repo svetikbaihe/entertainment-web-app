@@ -1,8 +1,6 @@
-export const bookMarkIconActive = (isActive: boolean) => ({
-  ...(isActive && {
-    fill: "#FFFFFF",
-  }),
-});
+export const bookMarkIconActive = {
+  fill: "#FFFFFF",
+};
 
 export const bookMarkIcon = {
   fill: "transparent",
@@ -10,10 +8,14 @@ export const bookMarkIcon = {
   strokeWidth: "2px",
 };
 
-export const bookMarkButton = {
+export const bookMarkButton = (isTablet: boolean) => ({
   "& .MuiButton-startIcon": { margin: 0 },
   "&:hover .MuiButton-startIcon svg": { stroke: "#10141E" },
   position: "absolute",
-  top: "10px",
+  top: "7px",
   right: "9px",
-};
+  ...(isTablet && {
+    top: "17px",
+    right: "17px",
+  }),
+});

@@ -1,9 +1,18 @@
-export const mediaTitle = (isTablet: boolean) => ({
+export const mediaTitle = (isTablet: boolean, isDesktop: boolean) => ({
   marginBottom: "1.3rem",
-  ...(!isTablet && { fontSize: "20px", fontWeight: 300 }),
+  ...(!isTablet && {
+    fontSize: "20px",
+    fontWeight: 300,
+  }),
+  ...(isTablet && {
+    marginBottom: "1.9rem",
+  }),
+  ...(isDesktop && {
+    marginBottom: "2.5rem",
+  }),
 });
 
-export const mediaContainer = (
+export const mediaGrid = (
   isMobile: boolean,
   isTablet: boolean,
   isDesktop: boolean
@@ -11,6 +20,7 @@ export const mediaContainer = (
   display: "grid",
   gridTemplateColumns: "1fr",
   gap: "1rem",
+  marginBottom: "3.25rem",
   ...(isMobile && { gridTemplateColumns: "repeat(2, auto)" }),
   ...(isTablet && { gridTemplateColumns: "repeat(3, auto)" }),
   ...(isDesktop && { gridTemplateColumns: "repeat(4, auto)", gap: "2rem" }),

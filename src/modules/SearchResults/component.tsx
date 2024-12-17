@@ -3,11 +3,10 @@ import type React from "react";
 import useResponsive from "@hooks/useMediaQuery";
 import MediaCard from "@modules/MediaCard";
 import { Box, Typography } from "@mui/material";
+import { mediaGrid, mediaTitle } from "@styles/modules";
 import { FormattedMessage } from "react-intl";
-import { v4 as uuid } from "uuid";
 
 import useContainer from "./hook";
-import { recommendedMediaContainer, recommendedTitle } from "./styles";
 import { SearchResultsProps } from "./types";
 
 const SearchResults: React.FC<SearchResultsProps> = ({
@@ -19,15 +18,15 @@ const SearchResults: React.FC<SearchResultsProps> = ({
   const { isDesktop, isTablet, isMobile } = useResponsive();
 
   return (
-    <Box>
-      <Typography variant="h2" sx={recommendedTitle(isTablet)}>
+    <>
+      <Typography variant="h2" sx={mediaTitle(isTablet, isDesktop)}>
         <FormattedMessage
           id="searchResults.title"
           values={{ quantity, searchedValue }}
         />
       </Typography>
 
-      <Box sx={recommendedMediaContainer(isMobile, isTablet, isDesktop)}>
+      <Box sx={mediaGrid(isMobile, isTablet, isDesktop)}>
         {matchedResult?.map(item => (
           <MediaCard
             thumbnailSrc={
@@ -42,11 +41,13 @@ const SearchResults: React.FC<SearchResultsProps> = ({
             textCategory={item.category}
             textRating={item.rating}
             isOnThumbnail={!isSearched && item.isTrending}
-            key={uuid()}
+            key={item.id}
+            id={item.id}
+            isBookmarked={item.isBookmarked}
           />
         ))}
       </Box>
-    </Box>
+    </>
   );
 };
 

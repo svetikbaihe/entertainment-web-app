@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
 import { RoutesKeys } from "@constants/routes";
-import { localDataSelectors } from "@modules/layouts/Dashboard";
+import { dashboardSelectors } from "@modules/layouts/Dashboard";
 import { useSelector } from "react-redux";
 import { useMatches } from "react-router-dom";
 
@@ -10,7 +10,7 @@ import { SearchResultsProps } from "./types";
 const useContainer = ({
   searchedValue,
 }: Pick<SearchResultsProps, "searchedValue">) => {
-  const data = useSelector(localDataSelectors.dataLocalSelector);
+  const data = useSelector(dashboardSelectors.mediaDataSelector);
 
   const moviesData = data?.filter(item => item.category === "Movie");
   const tvSeriesData = data?.filter(item => item.category === "TV Series");

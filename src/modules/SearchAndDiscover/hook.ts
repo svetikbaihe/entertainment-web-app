@@ -1,6 +1,10 @@
 import { useCallback, useMemo } from "react";
 
 import { RoutesKeys } from "@constants/routes";
+import {
+  bookmarkedActions,
+  bookmarkedSelectors,
+} from "@modules/bookmarked/BookmarkedMedia";
 import { homeActions, homeSelectors } from "@modules/home/Home";
 import { moviesSelectors, moviesActions } from "@modules/movies/Movies";
 import debounce from "lodash.debounce";
@@ -17,13 +21,12 @@ const useContainer = () => {
   const isBookmarked = matches.at(-1)?.id === RoutesKeys.BOOKMARKED_MOVIES;
 
   console.log(isTVSeries);
-  console.log(isBookmarked);
 
   const selectors = {
     [RoutesKeys.HOME]: homeSelectors.searchValueSelector,
     [RoutesKeys.MOVIES]: moviesSelectors.searchValueSelector,
     [RoutesKeys.TV_SERIES]: homeSelectors.searchValueSelector,
-    [RoutesKeys.BOOKMARKED_MOVIES]: homeSelectors.searchValueSelector,
+    [RoutesKeys.BOOKMARKED_MOVIES]: bookmarkedSelectors.searchValueSelector,
   };
 
   const searchedValue = useSelector(selectors[currentPage]);
@@ -38,8 +41,11 @@ const useContainer = () => {
       if (isMovies) {
         dispatch(moviesActions.setSearchValue(value));
       }
+      if (isBookmarked) {
+        dispatch(bookmarkedActions.setSearchValue(value));
+      }
     }, 500);
-  }, [dispatch, isHome, isMovies]);
+  }, [dispatch, isHome, isMovies, isBookmarked]);
 
   useCallback(() => {
     return () => {

@@ -1,9 +1,10 @@
 import type React from "react";
 
 import { ROUTES, RoutesKeys } from "@constants/routes";
+import BookmarkedMedia from "@modules/bookmarked/BookmarkedMedia";
 
 const BookmarkedMovies: React.FC = () => {
-  return <div></div>;
+  return <BookmarkedMedia />;
 };
 
 BookmarkedMovies.displayName =

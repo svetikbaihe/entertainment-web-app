@@ -3,9 +3,8 @@ import type React from "react";
 import useResponsive from "@hooks/useMediaQuery";
 import MediaCard from "@modules/MediaCard";
 import { Box, Typography } from "@mui/material";
-import { mediaTitle, mediaContainer } from "@styles/modules";
+import { mediaTitle, mediaGrid } from "@styles/modules";
 import { FormattedMessage } from "react-intl";
-import { v4 as uuid } from "uuid";
 
 import useContainer from "./hook";
 
@@ -15,12 +14,12 @@ const MoviesSection: React.FC = () => {
   const { isTablet, isDesktop, isMobile } = useResponsive();
 
   return (
-    <Box>
-      <Typography variant="h2" sx={mediaTitle(isTablet)}>
+    <>
+      <Typography variant="h2" sx={mediaTitle(isTablet, isDesktop)}>
         <FormattedMessage id="movies.title" />
       </Typography>
 
-      <Box sx={mediaContainer(isMobile, isTablet, isDesktop)}>
+      <Box sx={mediaGrid(isMobile, isTablet, isDesktop)}>
         {moviesData?.map(item => (
           <MediaCard
             thumbnailSrc={
@@ -34,11 +33,13 @@ const MoviesSection: React.FC = () => {
             textYear={item.year}
             textCategory={item.category}
             textRating={item.rating}
-            key={uuid()}
+            key={item.id}
+            id={item.id}
+            isBookmarked={item.isBookmarked}
           />
         ))}
       </Box>
-    </Box>
+    </>
   );
 };
 
