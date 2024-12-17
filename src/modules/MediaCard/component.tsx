@@ -1,12 +1,13 @@
 import type React from "react";
 
-import BookmarkIcon from "@components/BookmarkIcon";
+import Bookmark from "@components/Bookmark";
 import Thumbnail from "@components/Thumbnail";
 import useResponsive from "@hooks/useMediaQuery";
 import LocalMoviesRoundedIcon from "@mui/icons-material/LocalMoviesRounded";
 import TvIcon from "@mui/icons-material/Tv";
 import { Box, Typography } from "@mui/material";
 
+import useContainer from "./hook";
 import {
   mediaCard,
   mediaInfoUl,
@@ -23,8 +24,12 @@ const MediaCard: React.FC<MediaCardProps> = ({
   textYear,
   thumbnailSrc,
   isOnThumbnail = false,
+  isBookmarked = false,
+  id,
 }) => {
   const { isTablet } = useResponsive();
+
+  const { handleClick } = useContainer();
 
   return (
     <Box sx={mediaCard}>
@@ -35,7 +40,7 @@ const MediaCard: React.FC<MediaCardProps> = ({
           isOnThumbnail={isOnThumbnail}
         />
 
-        <BookmarkIcon />
+        <Bookmark isActive={isBookmarked} onClick={handleClick(id)} />
       </Box>
 
       <Box

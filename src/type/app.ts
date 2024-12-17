@@ -4,6 +4,7 @@ import { MessageDescriptor } from "react-intl";
 
 export interface MediaItem {
   title: string;
+  id: string;
   thumbnail: Thumbnail;
   year: number;
   category: string;
