@@ -15,7 +15,13 @@ import { useMatches } from "react-router-dom";
 const useContainer = () => {
   const matches = useMatches();
 
-  const currentPage = matches.at(-1)?.id as RoutesKeys;
+  const currentPage = matches.at(-1)?.id as Extract<
+    RoutesKeys,
+    | RoutesKeys.HOME
+    | RoutesKeys.MOVIES
+    | RoutesKeys.TV_SERIES
+    | RoutesKeys.BOOKMARKED_MOVIES
+  >;
   const isHome = matches.at(-1)?.id === RoutesKeys.HOME;
   const isMovies = matches.at(-1)?.id === RoutesKeys.MOVIES;
   const isTVSeries = matches.at(-1)?.id === RoutesKeys.TV_SERIES;

@@ -3,6 +3,8 @@ import { bookmarkedUk } from "@modules/bookmarked/BookmarkedSection";
 import { homeUk } from "@modules/home/Home";
 import { recommendedUk } from "@modules/home/Recommended";
 import { trendingUk } from "@modules/home/Trending";
+import { loginFormUk } from "@modules/layouts/Auth/LoginForm";
+import { signUpFormUk } from "@modules/layouts/Auth/SignUpForm";
 import { moviesInputPlaceholderUk } from "@modules/movies/Movies";
 import { moviesUk } from "@modules/movies/MoviesSection";
 import { searchResultsUk } from "@modules/SearchResults";
@@ -28,5 +30,7 @@ export default {
     ...bookmarkedInputPlaceholderUk,
     ...tvSeriesUk,
     ...tvSeriesInputPlaceholderUk,
+    ...loginFormUk,
+    ...signUpFormUk,
   },
 };

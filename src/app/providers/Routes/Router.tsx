@@ -35,6 +35,23 @@ const Router = createBrowserRouter([
           },
         ],
       },
+      {
+        id: LAYOUT[LayoutKeys.AUTH_LAYOUT].KEY,
+        path: LAYOUT[LayoutKeys.AUTH_LAYOUT].PATH,
+        lazy: () => import("@modules/layouts/Auth/lazy"),
+        children: [
+          {
+            id: ROUTES[RoutesKeys.LOGIN].KEY,
+            path: ROUTES[RoutesKeys.LOGIN].PATH,
+            lazy: () => import("@pages/Login/lazy"),
+          },
+          {
+            id: ROUTES[RoutesKeys.SIGN_UP].KEY,
+            path: ROUTES[RoutesKeys.SIGN_UP].PATH,
+            lazy: () => import("@pages/SignUp/lazy"),
+          },
+        ],
+      },
     ],
   },
 ]);
