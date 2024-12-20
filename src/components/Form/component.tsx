@@ -1,0 +1,47 @@
+import type React from "react";
+
+import { Box, Button, Link as MuiLink, Typography } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
+
+import { additionalTextLinkWrapper, form } from "./styles";
+import type { FormProps } from "./types";
+
+const Form: React.FC<FormProps> = ({
+  title,
+  children,
+  additionalText,
+  linkText,
+  buttonText,
+  action,
+  method,
+  linkDestination,
+}) => {
+  return (
+    <Box
+      component="form"
+      action={action}
+      method={method}
+      autoComplete="off"
+      sx={form}
+    >
+      <Typography variant="h2">{title}</Typography>
+      {children}
+      <Button variant="contained" type="submit">
+        {buttonText}
+      </Button>
+      <Box sx={additionalTextLinkWrapper}>
+        <Typography variant="overline">{additionalText}</Typography>
+        <MuiLink
+          component={RouterLink}
+          to={linkDestination}
+          variant="overline"
+          underline="hover"
+        >
+          {linkText}
+        </MuiLink>
+      </Box>
+    </Box>
+  );
+};
+
+export default Form;

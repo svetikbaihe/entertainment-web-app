@@ -50,3 +50,7 @@ export const pageWrapper = ({
     paddingTop: "1.68rem",
   }),
 });
+
+export const inputsContainer = {
+  marginBottom: "1.4rem",
+};

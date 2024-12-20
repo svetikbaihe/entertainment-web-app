@@ -3,6 +3,8 @@ import { bookmarkedEn } from "@modules/bookmarked/BookmarkedSection";
 import { homeEn } from "@modules/home/Home";
 import { recommendedEn } from "@modules/home/Recommended";
 import { trendingEn } from "@modules/home/Trending";
+import { loginFormEn } from "@modules/layouts/Auth/LoginForm";
+import { signUpFormEn } from "@modules/layouts/Auth/SignUpForm";
 import { moviesInputPlaceholderEn } from "@modules/movies/Movies";
 import { moviesEn } from "@modules/movies/MoviesSection";
 import { searchResultsEn } from "@modules/SearchResults";
@@ -28,5 +30,7 @@ export default {
     ...bookmarkedInputPlaceholderEn,
     ...tvSeriesEn,
     ...tvSeriesInputPlaceholderEn,
+    ...loginFormEn,
+    ...signUpFormEn,
   },
 };

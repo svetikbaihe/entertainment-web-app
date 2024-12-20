@@ -3,6 +3,8 @@ export enum RoutesKeys {
   MOVIES = "MOVIES",
   TV_SERIES = "TV_SERIES",
   BOOKMARKED_MOVIES = "BOOKMARKED_MOVIES",
+  LOGIN = "LOGIN",
+  SIGN_UP = "SIGN_UP",
 }
 
 export enum RoutesPath {
@@ -10,6 +12,8 @@ export enum RoutesPath {
   MOVIES = "/movies",
   TV_SERIES = "/tv_series",
   BOOKMARKED_MOVIES = "/bookmarked",
+  LOGIN = "/login",
+  SIGN_UP = "/sign_up",
 }
 
 export const ROUTES = {
@@ -32,5 +36,15 @@ export const ROUTES = {
     KEY: RoutesKeys.BOOKMARKED_MOVIES,
     PATH: RoutesPath[RoutesKeys.BOOKMARKED_MOVIES],
     DISPLAY_NAME: RoutesKeys.BOOKMARKED_MOVIES,
+  },
+  [RoutesKeys.LOGIN]: {
+    KEY: RoutesKeys.LOGIN,
+    PATH: RoutesPath[RoutesKeys.LOGIN],
+    DISPLAY_NAME: RoutesKeys.LOGIN,
+  },
+  [RoutesKeys.SIGN_UP]: {
+    KEY: RoutesKeys.SIGN_UP,
+    PATH: RoutesPath[RoutesKeys.SIGN_UP],
+    DISPLAY_NAME: RoutesKeys.SIGN_UP,
   },
 };

@@ -130,15 +130,14 @@ export const theme = createTheme({
     MuiInput: {
       styleOverrides: {
         root: {
-          ".MuiInput:not(.Mui-error)": {
-            borderBottom: "1px solid #5A698F",
-          },
           ":hover:not(.Mui-disabled, .Mui-error):before": {
             borderBottom: "1px solid #FFF",
           },
           ":after": {
             borderBottom: "1px solid #FFFFFF",
           },
+          fontWeight: 300,
+          fontSize: "0.94rem",
         },
         input: {
           caretColor: "#FC4747",
@@ -146,6 +145,15 @@ export const theme = createTheme({
           paddingLeft: "1rem",
           paddingBottom: "1rem",
           paddingTop: "1.5rem",
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "&.MuiTextField-root:not(.Mui-error)": {
+            borderBottom: "1px solid #5A698F",
+          },
         },
       },
     },
