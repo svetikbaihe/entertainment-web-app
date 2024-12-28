@@ -8,5 +8,5 @@ export interface FormProps extends PropsWithChildren {
   buttonText: string;
   action: string;
   method: string;
-  onChange?: VoidFunction;
+  onClick?: VoidFunction;
 }

@@ -68,6 +68,12 @@ export const theme = createTheme({
       fontSize: "0.94rem",
       letterSpacing: 0,
     },
+    errorText: {
+      fontWeight: 300,
+      fontSize: "0.8rem",
+      letterSpacing: 0,
+      color: "#FC4747",
+    },
   },
   components: {
     MuiButton: {
@@ -131,10 +137,13 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           ":hover:not(.Mui-disabled, .Mui-error):before": {
-            borderBottom: "1px solid #FFF",
+            borderBottom: "1px solid #FFFFFF",
           },
           ":after": {
             borderBottom: "1px solid #FFFFFF",
+          },
+          "&.MuiInput-root:not(.Mui-error)": {
+            borderBottom: "1px solid #5A698F",
           },
           fontWeight: 300,
           fontSize: "0.94rem",
@@ -145,15 +154,6 @@ export const theme = createTheme({
           paddingLeft: "1rem",
           paddingBottom: "1rem",
           paddingTop: "1.5rem",
-        },
-      },
-    },
-    MuiTextField: {
-      styleOverrides: {
-        root: {
-          "&.MuiTextField-root:not(.Mui-error)": {
-            borderBottom: "1px solid #5A698F",
-          },
         },
       },
     },

@@ -15,6 +15,7 @@ const Form: React.FC<FormProps> = ({
   action,
   method,
   linkDestination,
+  onClick,
 }) => {
   return (
     <Box
@@ -26,7 +27,7 @@ const Form: React.FC<FormProps> = ({
     >
       <Typography variant="h2">{title}</Typography>
       {children}
-      <Button variant="contained" type="submit">
+      <Button variant="contained" type="submit" onClick={onClick}>
         {buttonText}
       </Button>
       <Box sx={additionalTextLinkWrapper}>

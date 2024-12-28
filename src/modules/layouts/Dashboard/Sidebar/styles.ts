@@ -70,7 +70,7 @@ export const avatar = {
     width: "2rem",
     height: "2rem",
   },
-  [theme.breakpoints.up("sm")]: {
+  [theme.breakpoints.up("lg")]: {
     width: "2.5rem",
     height: "2.5rem",
   },
