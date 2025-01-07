@@ -50,6 +50,9 @@
       "@styles": ["./styles"],
       "@styles/*": ["./styles/*"],
 
+      "@lib": ["./lib"],
+      "@lib/*": ["./lib/*"],
+
       "@locales": ["./locales"],
       "@locales/*": ["./locales/*"]
     },

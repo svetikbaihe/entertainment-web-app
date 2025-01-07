@@ -6,7 +6,6 @@ import type { InputProps } from "./types";
 
 const Input: React.FC<InputProps> = ({
   error,
-  helperText,
   type,
   placeholder,
   startAdornment,
@@ -27,9 +26,7 @@ const Input: React.FC<InputProps> = ({
         endAdornment={
           <InputAdornment position="end">
             {error && (
-              <Typography color="primary.main" variant="caption">
-                {helperText}
-              </Typography>
+              <Typography color="primary.main" variant="caption"/>
             )}
           </InputAdornment>
         }

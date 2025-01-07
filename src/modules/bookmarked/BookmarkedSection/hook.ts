@@ -1,3 +1,4 @@
+import { SKELETONS_ARRAY } from "@constants/app";
 import { dashboardSelectors } from "@modules/layouts/Dashboard";
 import { useSelector } from "react-redux";
 
@@ -11,7 +12,9 @@ const useContainer = () => {
     item => item.isBookmarked === true && item.category === "TV Series"
   );
 
-  return { bookmarkedMovieData, bookmarkedTVSeriesData };
+  const isLoading = useSelector(dashboardSelectors.isLoadingSelector);
+
+  return { bookmarkedMovieData, bookmarkedTVSeriesData, skeletons: SKELETONS_ARRAY, isLoading };
 };
 
 export default useContainer;

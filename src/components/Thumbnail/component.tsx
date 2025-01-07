@@ -30,7 +30,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
       <Box component="img" src={src} alt={alt} sx={boxThumbnailMedia} />
 
       <Button
-        variant="text"
+        variant="iconText"
         startIcon={<PlayCircle sx={thumbnailIcon} />}
         sx={thumbnailButton}
       >

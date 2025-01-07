@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from "react";
+import { useCallback } from "react";
 
 import { RoutesKeys } from "@constants/routes";
 import {
@@ -8,7 +8,6 @@ import {
 import { homeActions, homeSelectors } from "@modules/home/Home";
 import { moviesSelectors, moviesActions } from "@modules/movies/Movies";
 import { tvSeriesActions, tvSeriesSelectors } from "@modules/tvSeries/TVSeries";
-import debounce from "lodash.debounce";
 import { useDispatch, useSelector } from "react-redux";
 import { useMatches } from "react-router-dom";
 
@@ -38,8 +37,8 @@ const useContainer = () => {
 
   const dispatch = useDispatch();
 
-  const debouncedSetSearchValue = useMemo(() => {
-    return debounce((value: string) => {
+  const handleSearchChange = useCallback(
+    (value: string) => {
       if (isHome) {
         dispatch(homeActions.setSearchValue(value));
       }
@@ -52,18 +51,9 @@ const useContainer = () => {
       if (isTVSeries) {
         dispatch(tvSeriesActions.setSearchValue(value));
       }
-    }, 500);
-  }, [dispatch, isHome, isMovies, isBookmarked, isTVSeries]);
-
-  useCallback(() => {
-    return () => {
-      debouncedSetSearchValue.cancel();
-    };
-  }, [debouncedSetSearchValue]);
-
-  const handleSearchChange: React.ChangeEventHandler<HTMLInputElement> = e => {
-    debouncedSetSearchValue(e.target.value);
-  };
+    },
+    [dispatch, isHome, isMovies, isBookmarked, isTVSeries]
+  );
 
   return { searchedValue, handleSearchChange };
 };

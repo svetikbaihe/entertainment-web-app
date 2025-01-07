@@ -1,4 +1,4 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, ReactNode } from "react";
 
 export interface FormProps extends PropsWithChildren {
   title: string;
@@ -8,5 +8,6 @@ export interface FormProps extends PropsWithChildren {
   buttonText: string;
   action: string;
   method: string;
-  onClick?: VoidFunction;
+  onClick: VoidFunction;
+  endComponent: ReactNode
 }

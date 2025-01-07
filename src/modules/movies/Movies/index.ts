@@ -1,4 +1,3 @@
-export { default } from "./component";
 export { default as moviesInputPlaceholderEn } from "./locales/en";
 export { default as moviesInputPlaceholderUk } from "./locales/uk";
 

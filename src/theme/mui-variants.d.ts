@@ -8,6 +8,7 @@ import {
 declare module "@mui/material/Button" {
   interface ButtonPropsVariantOverrides {
     icon: true;
+    iconText: true;
   }
 }
 

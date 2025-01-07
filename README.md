@@ -1,6 +1,9 @@
 # Frontend Mentor - Entertainment web app solution
 
-This is a solution to the [Entertainment web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/entertainment-web-app-J-UhgAW1X). Frontend Mentor challenges help you improve your coding skills by building realistic project.
+This is a solution to the
+[Entertainment web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/entertainment-web-app-J-UhgAW1X).
+Frontend Mentor challenges help you improve your coding skills by building
+realistic project.
 
 ## Table of contents
 
@@ -8,11 +11,8 @@ This is a solution to the [Entertainment web app challenge on Frontend Mentor](h
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+- [Built with](#built-with)
+- [Installation] (#installation)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -27,38 +27,54 @@ Users should be able to:
 - Navigate between Home, Movies, TV Series, and Bookmarked Shows pages
 - Add/Remove bookmarks from all movies and TV series
 - Search for relevant shows on all pages
-- **Bonus**: Build this project as a full-stack application
-- **Bonus**: If you're building a full-stack app, we provide authentication screen (sign-up/login) designs if you'd like to create an auth flow
+- **Bonus**: Create an auth flow
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Sign up_mobile](/images/screenshots/sign-up_mobile.png)
+![Login_mobile](/images/screenshots/login_mobile.png)
+![Home_desktop](/images/screenshots/home_desktop.png)
+![Bookmarked_desktop](/images/screenshots/bookmarked_desktop_search.png)
+![Desktop-menu_desktop](/images/screenshots/desktop_menu.png)
 
 ### Links
 
-- Solution URL: [GitHub](https://github.com/svetikbaihe/entertainment-web-app.git)
+- Solution URL:
+  [GitHub](https://github.com/svetikbaihe/entertainment-web-app.git)
 - Live Site URL: [Vercel](https://your-live-site-url.com)
 
-## My process
-
-### Built with
+## Built with
 
 - HTML5 markup
 - Typescript
-- Flexbox
 - Mobile-first workflow
 - Material UI
 - Prettier + ESLint
 - React
 - Redux Toolkit
 - React Route
+- React Intl
+- React Hook Form + Yup
 - Vite(yarn)
 
-### What I learned
+## Installation
 
-### Continued development
+**Clone the repository**
 
-### Useful resources
+```
+git clone <repository-url>
+cd <repository-folder>
+```
+
+**Install dependencies**
+```
+yarn install
+```
+
+**Run the project locally in development mode**
+```
+yarn dev
+```
 
 ## Author
 

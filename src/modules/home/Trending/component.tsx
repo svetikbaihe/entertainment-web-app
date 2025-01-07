@@ -7,9 +7,10 @@ import { FormattedMessage } from "react-intl";
 
 import useContainer from "./hook";
 import { trendingTitle, trendingMediaSection } from "./styles";
+import SkeletonMediaRow from "@modules/skeletons/SkeletonMediaRow";
 
 const TrendingSection: React.FC = () => {
-  const { trendingData } = useContainer();
+  const { trendingData, skeletons, isLoading } = useContainer();
 
   const { isTablet } = useResponsive();
 
@@ -18,25 +19,31 @@ const TrendingSection: React.FC = () => {
       <Typography variant="h2" sx={trendingTitle(isTablet)}>
         <FormattedMessage id="trending.title" />
       </Typography>
-      <Box sx={trendingMediaSection(isTablet)}>
-        {trendingData?.map(item => (
-          <MediaCard
-            thumbnailSrc={
-              isTablet
-                ? item.thumbnail.trending.large
-                : item.thumbnail.trending.small
-            }
-            textTitle={item.title}
-            textYear={item.year}
-            textCategory={item.category}
-            textRating={item.rating}
-            isOnThumbnail={item.isTrending}
-            key={item.id}
-            id={item.id}
-            isBookmarked={item.isBookmarked}
-          />
-        ))}
-      </Box>
+      {isLoading ? (
+        <Box sx={trendingMediaSection(isTablet)}>
+          {skeletons?.map(n => <SkeletonMediaRow key={n} />)}
+        </Box>
+      ) : (
+        <Box sx={trendingMediaSection(isTablet)}>
+          {trendingData?.map(item => (
+            <MediaCard
+              thumbnailSrc={
+                isTablet
+                  ? item.thumbnail.trending.large
+                  : item.thumbnail.trending.small
+              }
+              textTitle={item.title}
+              textYear={item.year}
+              textCategory={item.category}
+              textRating={item.rating}
+              isOnThumbnail={item.isTrending}
+              key={item.id}
+              id={item.id}
+              isBookmarked={item.isBookmarked}
+            />
+          ))}
+        </Box>
+      )}
     </>
   );
 };

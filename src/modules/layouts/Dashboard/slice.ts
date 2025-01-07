@@ -1,13 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { MediaItem } from "@type/app";
-
-export interface InitialState {
-  mediaData: MediaItem[];
-}
+import { InitialState, LanguageType } from "./types";
 
 export const initialState: InitialState = {
   mediaData: [],
+  language: LanguageType.EN,
 };
 
 const dashboardSlice = createSlice({
@@ -26,6 +24,17 @@ const dashboardSlice = createSlice({
           ? { ...item, isBookmarked: !item.isBookmarked }
           : item
       );
+    },
+    toggleLanguage: (state: InitialState) => {
+      state.language === LanguageType.EN
+        ? (state.language = LanguageType.UK)
+        : (state.language = LanguageType.EN);
+    },
+    setENLanguage: (state: InitialState) => {
+      state.language = LanguageType.EN
+    },
+    setUKLanguage: (state: InitialState) => {
+      state.language = LanguageType.UK
     },
   },
 });

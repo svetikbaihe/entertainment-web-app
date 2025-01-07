@@ -5,6 +5,7 @@ import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
 import { authLayout, authLayoutLogo } from "./styles";
+import ProtectedRoute from "@modules/ProtectedRoute";
 
 const AuthLayout: React.FC = () => {
   return (
@@ -22,4 +23,8 @@ const AuthLayout: React.FC = () => {
 
 AuthLayout.displayName = LAYOUT[LayoutKeys.AUTH_LAYOUT].DISPLAY_NAME;
 
-export default AuthLayout;
+const ProtectedAuthLayout = () => {
+  return <ProtectedRoute Component={<AuthLayout />} isLayout />;
+};
+
+export default ProtectedAuthLayout;

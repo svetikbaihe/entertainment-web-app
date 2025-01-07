@@ -1,4 +1,3 @@
-export { default } from "./component";
 export { default as tvSeriesInputPlaceholderEn } from "./locales/en";
 export { default as tvSeriesInputPlaceholderUk } from "./locales/uk";
 

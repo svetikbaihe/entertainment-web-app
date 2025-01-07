@@ -19,3 +19,8 @@ export const isLoadingSelector = createSelector(
   dataQuerySelector,
   data => data.isLoading
 );
+
+export const languageSelector = createSelector(
+  dataSelector,
+  data => data.language
+);

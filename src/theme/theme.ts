@@ -99,6 +99,19 @@ export const theme = createTheme({
                 },
               },
             },
+            {
+              props: {
+                variant: "iconText",
+              },
+              style: {
+                backgroundColor: "rgba(255, 255, 255, 0.25)",
+                color: "#FFFFFF",
+                borderRadius: "28.5px",
+                minWidth: "7.3rem",
+                paddingRight: "1.68rem",
+                minHeight: "3rem",
+              },
+            },
           ],
           "&.MuiButton-contained": {
             paddingTop: "0.687rem",
@@ -121,14 +134,6 @@ export const theme = createTheme({
               backgroundColor: "#FFFFFF",
               borderColor: "#FFFFFF",
             },
-          },
-          "&.MuiButton-text": {
-            backgroundColor: "rgba(255, 255, 255, 0.25)",
-            color: "#FFFFFF",
-            borderRadius: "28.5px",
-            minWidth: "7.3rem",
-            paddingRight: "1.68rem",
-            minHeight: "3rem",
           },
         },
       },

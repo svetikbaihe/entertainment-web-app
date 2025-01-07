@@ -7,9 +7,10 @@ import { mediaTitle, mediaGrid } from "@styles/modules";
 import { FormattedMessage } from "react-intl";
 
 import useContainer from "./hook";
+import SkeletonMediaGrid from "@modules/skeletons/SkeletonMediaGrid";
 
 const MoviesSection: React.FC = () => {
-  const { moviesData } = useContainer();
+  const { moviesData, skeletons, isLoading } = useContainer();
 
   const { isTablet, isDesktop, isMobile } = useResponsive();
 
@@ -19,26 +20,34 @@ const MoviesSection: React.FC = () => {
         <FormattedMessage id="movies.title" />
       </Typography>
 
-      <Box sx={mediaGrid(isMobile, isTablet, isDesktop)}>
-        {moviesData?.map(item => (
-          <MediaCard
-            thumbnailSrc={
-              isDesktop
-                ? item.thumbnail.regular.large
-                : isTablet
-                  ? item.thumbnail.regular.medium
-                  : item.thumbnail.regular.small
-            }
-            textTitle={item.title}
-            textYear={item.year}
-            textCategory={item.category}
-            textRating={item.rating}
-            key={item.id}
-            id={item.id}
-            isBookmarked={item.isBookmarked}
-          />
-        ))}
-      </Box>
+      {isLoading ? (
+        <Box sx={mediaGrid(isMobile, isTablet, isDesktop)}>
+          {skeletons.map(n => (
+            <SkeletonMediaGrid key={n} />
+          ))}
+        </Box>
+      ) : (
+        <Box sx={mediaGrid(isMobile, isTablet, isDesktop)}>
+          {moviesData?.map(item => (
+            <MediaCard
+              thumbnailSrc={
+                isDesktop
+                  ? item.thumbnail.regular.large
+                  : isTablet
+                    ? item.thumbnail.regular.medium
+                    : item.thumbnail.regular.small
+              }
+              textTitle={item.title}
+              textYear={item.year}
+              textCategory={item.category}
+              textRating={item.rating}
+              key={item.id}
+              id={item.id}
+              isBookmarked={item.isBookmarked}
+            />
+          ))}
+        </Box>
+      )}
     </>
   );
 };

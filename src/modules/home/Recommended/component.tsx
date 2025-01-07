@@ -7,9 +7,10 @@ import { mediaTitle, mediaGrid } from "@styles/modules";
 import { FormattedMessage } from "react-intl";
 
 import useContainer from "./hook";
+import SkeletonMediaGrid from "@modules/skeletons/SkeletonMediaGrid";
 
 const RecommendedSection: React.FC = () => {
-  const { notTrendingData } = useContainer();
+  const { notTrendingData, skeletons, isLoading } = useContainer();
 
   const { isTablet, isDesktop, isMobile } = useResponsive();
 
@@ -19,27 +20,35 @@ const RecommendedSection: React.FC = () => {
         <FormattedMessage id="recommended.title" />
       </Typography>
 
-      <Box sx={mediaGrid(isMobile, isTablet, isDesktop)}>
-        {notTrendingData?.map(item => (
-          <MediaCard
-            thumbnailSrc={
-              isDesktop
-                ? item.thumbnail.regular.large
-                : isTablet
-                  ? item.thumbnail.regular.medium
-                  : item.thumbnail.regular.small
-            }
-            textTitle={item.title}
-            textYear={item.year}
-            textCategory={item.category}
-            textRating={item.rating}
-            isOnThumbnail={item.isTrending}
-            key={item.id}
-            id={item.id}
-            isBookmarked={item.isBookmarked}
-          />
-        ))}
-      </Box>
+      {isLoading ? (
+        <Box sx={mediaGrid(isMobile, isTablet, isDesktop)}>
+          {skeletons.map(n => (
+            <SkeletonMediaGrid key={n} />
+          ))}
+        </Box>
+      ) : (
+        <Box sx={mediaGrid(isMobile, isTablet, isDesktop)}>
+          {notTrendingData?.map(item => (
+            <MediaCard
+              thumbnailSrc={
+                isDesktop
+                  ? item.thumbnail.regular.large
+                  : isTablet
+                    ? item.thumbnail.regular.medium
+                    : item.thumbnail.regular.small
+              }
+              textTitle={item.title}
+              textYear={item.year}
+              textCategory={item.category}
+              textRating={item.rating}
+              isOnThumbnail={item.isTrending}
+              key={item.id}
+              id={item.id}
+              isBookmarked={item.isBookmarked}
+            />
+          ))}
+        </Box>
+      )}
     </>
   );
 };
