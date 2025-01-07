@@ -12,7 +12,7 @@ realistic project.
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [Built with](#built-with)
-- [Installation] (#installation)
+- [Installation](#installation)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -31,11 +31,11 @@ Users should be able to:
 
 ### Screenshot
 
-![Sign up_mobile](/images/screenshots/sign-up_mobile.png)
-![Login_mobile](/images/screenshots/login_mobile.png)
-![Home_desktop](/images/screenshots/home_desktop.png)
-![Bookmarked_desktop](/images/screenshots/bookmarked_desktop_search.png)
-![Desktop-menu_desktop](/images/screenshots/desktop_menu.png)
+![Sign up_mobile](public/images/screenshots/sign-up_mobile.png)
+![Login_mobile](public/images/screenshots/login_mobile.png)
+![Home_desktop](public/images/screenshots/home_desktop.png)
+![Bookmarked_desktop](public/images/screenshots/bookmarked_desktop_search.png)
+![Desktop-menu_desktop](public/images/screenshots/desktop_menu.png)
 
 ### Links
 
