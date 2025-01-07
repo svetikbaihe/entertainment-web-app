@@ -3,7 +3,7 @@ import type React from "react";
 import SearchAndDiscover from "@modules/SearchAndDiscover";
 import { pageWrapper } from "@styles/modules";
 
-import TVSeriesSection from "../TVSerieSection";
+import TVSeriesSection from "../TVSeriesSection";
 
 const TVSeries: React.FC = () => {
   return (

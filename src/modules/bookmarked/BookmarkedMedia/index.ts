@@ -1,4 +1,3 @@
-export { default } from "./component";
 export { default as bookmarkedInputPlaceholderEn } from "./locales/en";
 export { default as bookmarkedInputPlaceholderUk } from "./locales/uk";
 

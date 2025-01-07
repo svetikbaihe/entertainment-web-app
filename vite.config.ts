@@ -30,6 +30,7 @@ export default defineConfig({
       "@type": path.resolve("src/type"),
       "@locales": path.resolve("src/locales"),
       "@styles": path.resolve("src/styles"),
+      "@lib": path.resolve("src/lib"),
     },
   },
 });

@@ -2,6 +2,7 @@ import type React from "react";
 
 import { LAYOUT, LayoutKeys } from "@constants/layouts";
 import useResponsive from "@hooks/useMediaQuery";
+import ProtectedRoute from "@modules/ProtectedRoute";
 import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
@@ -16,7 +17,7 @@ const DashboardLayout: React.FC = () => {
 
   return (
     <Box sx={dashboard(isDesktop)}>
-      <Sidebar avatarSrc="/images/image-avatar.png" />
+      <Sidebar avatarSrc="/images/image-avatar.png" avatarAlt="John Wons" />
       <Outlet />
     </Box>
   );
@@ -24,4 +25,8 @@ const DashboardLayout: React.FC = () => {
 
 DashboardLayout.displayName = LAYOUT[LayoutKeys.DASHBOARD_LAYOUT].DISPLAY_NAME;
 
-export default DashboardLayout;
+const ProtectedDashboardLayout = () => {
+  return <ProtectedRoute Component={<DashboardLayout />} isLayout />;
+};
+
+export default ProtectedDashboardLayout;

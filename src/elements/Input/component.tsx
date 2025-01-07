@@ -1,12 +1,10 @@
 import type React from "react";
 
 import { InputAdornment, Input as InputMui, Typography } from "@mui/material";
-
-import type { InputProps } from "./types";
+import { InputProps } from "@mui/material/Input";
 
 const Input: React.FC<InputProps> = ({
   error,
-  helperText,
   type,
   placeholder,
   startAdornment,
@@ -26,11 +24,7 @@ const Input: React.FC<InputProps> = ({
         onChange={onChange}
         endAdornment={
           <InputAdornment position="end">
-            {error && (
-              <Typography color="primary.main" variant="caption">
-                {helperText}
-              </Typography>
-            )}
+            {error && <Typography color="primary.main" variant="caption" />}
           </InputAdornment>
         }
         value={value}

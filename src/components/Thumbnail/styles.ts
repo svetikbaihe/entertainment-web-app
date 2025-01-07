@@ -6,7 +6,7 @@ export const boxThumbnail = (isTablet: boolean, isDesktop: boolean) => ({
     backgroundColor: "#10141E",
     opacity: "50%",
   },
-  "&:hover .MuiButton-text": {
+  "&:hover .MuiButton-iconText": {
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",

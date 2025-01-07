@@ -68,6 +68,12 @@ export const theme = createTheme({
       fontSize: "0.94rem",
       letterSpacing: 0,
     },
+    errorText: {
+      fontWeight: 300,
+      fontSize: "0.8rem",
+      letterSpacing: 0,
+      color: "#FC4747",
+    },
   },
   components: {
     MuiButton: {
@@ -93,6 +99,19 @@ export const theme = createTheme({
                 },
               },
             },
+            {
+              props: {
+                variant: "iconText",
+              },
+              style: {
+                backgroundColor: "rgba(255, 255, 255, 0.25)",
+                color: "#FFFFFF",
+                borderRadius: "28.5px",
+                minWidth: "7.3rem",
+                paddingRight: "1.68rem",
+                minHeight: "3rem",
+              },
+            },
           ],
           "&.MuiButton-contained": {
             paddingTop: "0.687rem",
@@ -116,14 +135,6 @@ export const theme = createTheme({
               borderColor: "#FFFFFF",
             },
           },
-          "&.MuiButton-text": {
-            backgroundColor: "rgba(255, 255, 255, 0.25)",
-            color: "#FFFFFF",
-            borderRadius: "28.5px",
-            minWidth: "7.3rem",
-            paddingRight: "1.68rem",
-            minHeight: "3rem",
-          },
         },
       },
     },
@@ -131,10 +142,13 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           ":hover:not(.Mui-disabled, .Mui-error):before": {
-            borderBottom: "1px solid #FFF",
+            borderBottom: "1px solid #FFFFFF",
           },
           ":after": {
             borderBottom: "1px solid #FFFFFF",
+          },
+          "&.MuiInput-root:not(.Mui-error)": {
+            borderBottom: "1px solid #5A698F",
           },
           fontWeight: 300,
           fontSize: "0.94rem",

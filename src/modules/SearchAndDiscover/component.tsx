@@ -1,6 +1,6 @@
 import type React from "react";
 
-import InputSearch from "@components/Search";
+import InputSearch from "@components/InputSearch";
 import useResponsive from "@hooks/useMediaQuery";
 import SearchResults from "@modules/SearchResults";
 import { Box } from "@mui/material";
@@ -22,7 +22,7 @@ const SearchAndDiscover: React.FC<SearchAndDiscoverProps> = ({
       <InputSearch
         placeholder={searchPlaceholder}
         onChange={handleSearchChange}
-        value={searchedValue}
+        search={searchedValue}
       />
 
       {searchedValue.length === 0 && children}

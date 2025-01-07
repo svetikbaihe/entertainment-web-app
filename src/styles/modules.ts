@@ -1,7 +1,7 @@
 export const mediaTitle = (isTablet: boolean, isDesktop: boolean) => ({
   marginBottom: "1.3rem",
   ...(!isTablet && {
-    fontSize: "20px",
+    fontSize: "1.25rem",
     fontWeight: 300,
   }),
   ...(isTablet && {
@@ -53,4 +53,9 @@ export const pageWrapper = ({
 
 export const inputsContainer = {
   marginBottom: "1.4rem",
+};
+
+export const skeletonBookmarkWrapper = {
+  display: "flex",
+  justifyContent: "end",
 };
