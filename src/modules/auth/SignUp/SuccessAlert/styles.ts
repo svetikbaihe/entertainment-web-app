@@ -3,7 +3,7 @@ export const successfulAlertBtnText = {
   fontWeight: 500,
   "&:hover": {
     textDecoration: "underline",
-  }
+  },
 };
 
 export const successfulAlertText = {
@@ -16,5 +16,5 @@ export const successfulAlertBtn = {
   "&:hover": {
     backgroundColor: "transparent",
   },
-  paddingTop: "0.25rem"
-}
+  paddingTop: "0.25rem",
+};

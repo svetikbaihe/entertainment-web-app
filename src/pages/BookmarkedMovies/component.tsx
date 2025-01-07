@@ -1,8 +1,8 @@
 import type React from "react";
-import ProtectedRoute from "@modules/ProtectedRoute";
 
 import { ROUTES, RoutesKeys } from "@constants/routes";
-import {Component as BookmarkedMedia} from "@modules/bookmarked/BookmarkedMedia/lazy";
+import { Component as BookmarkedMedia } from "@modules/bookmarked/BookmarkedMedia/lazy";
+import ProtectedRoute from "@modules/ProtectedRoute";
 
 const BookmarkedMovies: React.FC = () => {
   return <ProtectedRoute Component={<BookmarkedMedia />} />;

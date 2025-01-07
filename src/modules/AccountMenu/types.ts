@@ -1,5 +1,5 @@
 export interface AccountMenuProps {
-  anchorEl: null | HTMLElement,
-  open: boolean
-  onClose: VoidFunction
+  anchorEl: null | HTMLElement;
+  open: boolean;
+  onClose: VoidFunction;
 }

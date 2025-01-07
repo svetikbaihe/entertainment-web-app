@@ -1,9 +1,11 @@
+import type React from "react";
+
 import SkeletonElement from "@elements/SkeletonElement";
 import useResponsive from "@hooks/useMediaQuery";
 import { Box } from "@mui/material";
-import type React from "react";
-import { skeletonsGridWrapper } from "./styles";
 import { skeletonBookmarkWrapper } from "@styles/modules";
+
+import { skeletonsGridWrapper } from "./styles";
 
 const SkeletonMediaGrid: React.FC = () => {
   const { isMobile, isTablet, isDesktop } = useResponsive();

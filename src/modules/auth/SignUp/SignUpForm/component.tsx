@@ -1,14 +1,14 @@
 import type React from "react";
 
 import Form from "@components/Form";
+import { RoutesPath } from "@constants/routes";
+import FormattedOrRawMessage from "@elements/FormattedOrRawMessage";
+import LanguageSwitcher from "@modules/LanguageSwitcher";
 import { Box, InputAdornment, TextField, Typography } from "@mui/material";
 import { inputsContainer } from "@styles/modules";
 import { Controller } from "react-hook-form";
 
 import useContainer from "./hook";
-import FormattedOrRawMessage from "@elements/FormattedOrRawMessage";
-import { RoutesPath } from "@constants/routes";
-import LanguageSwitcher from "@modules/LanguageSwitcher";
 
 const SignUpForm: React.FC = () => {
   const { intl, control, errors, handleSubmit, onSubmit } = useContainer();

@@ -1,5 +1,6 @@
 import type React from "react";
 
+import AccountMenu from "@modules/AccountMenu";
 import { Bookmark, LocalMovies, Tv } from "@mui/icons-material";
 import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
 import { AppBar, Avatar, Box, Button, IconButton } from "@mui/material";
@@ -14,7 +15,6 @@ import {
   activePageBtn,
 } from "./styles";
 import { SidebarProps } from "./types";
-import AccountMenu from "@modules/AccountMenu";
 
 const Sidebar: React.FC<SidebarProps> = ({ avatarSrc, avatarAlt }) => {
   const {

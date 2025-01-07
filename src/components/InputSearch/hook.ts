@@ -1,7 +1,9 @@
-import { useIntl } from "react-intl";
-import { InputSearchProps } from "./types";
 import { useCallback, useEffect, useState } from "react";
+
 import debounce from "lodash.debounce";
+import { useIntl } from "react-intl";
+
+import { InputSearchProps } from "./types";
 
 const useContainer = ({
   search,

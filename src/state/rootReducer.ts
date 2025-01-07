@@ -1,3 +1,4 @@
+import { signUpReducer, signUpReducerName } from "@modules/auth/SignUp";
 import {
   bookmarkedReducer,
   bookmarkedReducerName,
@@ -12,7 +13,6 @@ import {
   tvSeriesReducer,
   tvSeriesReducerName,
 } from "@modules/tvSeries/TVSeries";
-import { signUpReducer, signUpReducerName } from "@modules/auth/SignUp";
 import { combineReducers } from "@reduxjs/toolkit";
 
 import { localApiSlice } from "./rootQuery";

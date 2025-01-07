@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { MediaItem } from "@type/app";
+
 import { InitialState, LanguageType } from "./types";
 
 export const initialState: InitialState = {
@@ -26,15 +27,14 @@ const dashboardSlice = createSlice({
       );
     },
     toggleLanguage: (state: InitialState) => {
-      state.language === LanguageType.EN
-        ? (state.language = LanguageType.UK)
-        : (state.language = LanguageType.EN);
+      state.language =
+        state.language === LanguageType.EN ? LanguageType.UK : LanguageType.EN;
     },
     setENLanguage: (state: InitialState) => {
-      state.language = LanguageType.EN
+      state.language = LanguageType.EN;
     },
     setUKLanguage: (state: InitialState) => {
-      state.language = LanguageType.UK
+      state.language = LanguageType.UK;
     },
   },
 });

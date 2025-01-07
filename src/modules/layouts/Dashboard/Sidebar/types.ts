@@ -1,4 +1,4 @@
 export interface SidebarProps {
   avatarSrc: string;
-  avatarAlt: string
+  avatarAlt: string;
 }

@@ -1,11 +1,11 @@
 import type React from "react";
 
 import { LAYOUT, LayoutKeys } from "@constants/layouts";
+import ProtectedRoute from "@modules/ProtectedRoute";
 import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 
 import { authLayout, authLayoutLogo } from "./styles";
-import ProtectedRoute from "@modules/ProtectedRoute";
 
 const AuthLayout: React.FC = () => {
   return (

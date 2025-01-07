@@ -2,12 +2,12 @@ import type React from "react";
 
 import useResponsive from "@hooks/useMediaQuery";
 import MediaCard from "@modules/MediaCard";
+import SkeletonMediaGrid from "@modules/skeletons/SkeletonMediaGrid";
 import { Box, Typography } from "@mui/material";
 import { mediaTitle, mediaGrid } from "@styles/modules";
 import { FormattedMessage } from "react-intl";
 
 import useContainer from "./hook";
-import SkeletonMediaGrid from "@modules/skeletons/SkeletonMediaGrid";
 
 const RecommendedSection: React.FC = () => {
   const { notTrendingData, skeletons, isLoading } = useContainer();

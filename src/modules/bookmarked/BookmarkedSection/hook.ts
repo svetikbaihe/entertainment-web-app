@@ -14,7 +14,12 @@ const useContainer = () => {
 
   const isLoading = useSelector(dashboardSelectors.isLoadingSelector);
 
-  return { bookmarkedMovieData, bookmarkedTVSeriesData, skeletons: SKELETONS_ARRAY, isLoading };
+  return {
+    bookmarkedMovieData,
+    bookmarkedTVSeriesData,
+    skeletons: SKELETONS_ARRAY,
+    isLoading,
+  };
 };
 
 export default useContainer;

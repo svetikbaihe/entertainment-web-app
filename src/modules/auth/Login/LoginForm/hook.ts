@@ -1,15 +1,15 @@
+import { LocalStorageKeys, UserRoles } from "@constants/app";
+import { RoutesPath } from "@constants/routes";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { signUpSelectors } from "@modules/auth/SignUp";
+import { setItem } from "@utils/localStorage";
 import { useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import { SCHEMA } from "./constants";
-
-import { FormValues } from "./types";
 import { useSelector } from "react-redux";
-import { signUpSelectors } from "@modules/auth/SignUp";
 import { generatePath, useNavigate } from "react-router-dom";
-import { RoutesPath } from "@constants/routes";
-import { setItem } from "@utils/localStorage";
-import { LocalStorageKeys, UserRoles } from "@constants/app";
+
+import { SCHEMA } from "./constants";
+import { FormValues } from "./types";
 
 const useContainer = () => {
   const intl = useIntl();

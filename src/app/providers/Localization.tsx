@@ -2,9 +2,9 @@ import type React from "react";
 
 import localesEn from "@locales/en";
 import localesUk from "@locales/uk";
+import { languageSelector } from "@modules/layouts/Dashboard/selectors";
 import { IntlProvider } from "react-intl";
 import { useSelector } from "react-redux";
-import { languageSelector } from "@modules/layouts/Dashboard/selectors";
 
 const messages = {
   en: localesEn.messages,

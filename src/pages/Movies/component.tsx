@@ -1,7 +1,7 @@
 import type React from "react";
 
 import { ROUTES, RoutesKeys } from "@constants/routes";
-import {Component as Movies} from "@modules/movies/Movies/lazy";
+import { Component as Movies } from "@modules/movies/Movies/lazy";
 import ProtectedRoute from "@modules/ProtectedRoute";
 
 const MoviesPage: React.FC = () => {

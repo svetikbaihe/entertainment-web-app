@@ -1,5 +1,6 @@
 import type { LocalStorageKeys } from "@constants/app";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function setItem(key: LocalStorageKeys, value: any) {
   const serializedValue =
     typeof value === "object" ? JSON.stringify(value) : value;
@@ -12,6 +13,8 @@ export function getItem(key: LocalStorageKeys) {
   try {
     if (value) return JSON.parse(value);
   } catch (error) {
+    console.log("Error => ", error);
+
     return value;
   }
 }

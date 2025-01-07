@@ -16,7 +16,7 @@ const Form: React.FC<FormProps> = ({
   method,
   linkDestination,
   onClick,
-  endComponent
+  endComponent,
 }) => {
   return (
     <Box
@@ -26,7 +26,7 @@ const Form: React.FC<FormProps> = ({
       autoComplete="off"
       sx={form}
     >
-      <Box sx={{display: "flex", justifyContent: "space-between"}}>
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <Typography variant="h2">{title}</Typography>
         {endComponent}
       </Box>

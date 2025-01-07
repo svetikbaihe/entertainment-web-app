@@ -9,5 +9,5 @@ export interface FormProps extends PropsWithChildren {
   action: string;
   method: string;
   onClick: VoidFunction;
-  endComponent: ReactNode
+  endComponent: ReactNode;
 }

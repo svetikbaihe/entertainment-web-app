@@ -1,5 +1,7 @@
-import SignUpForm from "@modules/auth/SignUp/SignUpForm";
 import type React from "react";
+
+import SignUpForm from "@modules/auth/SignUp/SignUpForm";
+
 import useContainer from "./hook";
 import SuccessAlert from "./SuccessAlert";
 

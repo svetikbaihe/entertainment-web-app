@@ -2,12 +2,12 @@ import type React from "react";
 
 import useResponsive from "@hooks/useMediaQuery";
 import MediaCard from "@modules/MediaCard";
+import SkeletonMediaRow from "@modules/skeletons/SkeletonMediaRow";
 import { Box, Typography } from "@mui/material";
 import { FormattedMessage } from "react-intl";
 
 import useContainer from "./hook";
 import { trendingTitle, trendingMediaSection } from "./styles";
-import SkeletonMediaRow from "@modules/skeletons/SkeletonMediaRow";
 
 const TrendingSection: React.FC = () => {
   const { trendingData, skeletons, isLoading } = useContainer();

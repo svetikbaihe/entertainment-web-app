@@ -1,9 +1,13 @@
+import type React from "react";
+
+import useResponsive from "@hooks/useMediaQuery";
+import LanguageIcon from "@mui/icons-material/Language";
+import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
+import { Menu, useTheme } from "@mui/material";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import MenuItem from "@mui/material/MenuItem";
-import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
-import type React from "react";
-import useResponsive from "@hooks/useMediaQuery";
+
 import useContainer from "./hook";
 import {
   accountMenu,
@@ -12,8 +16,6 @@ import {
   accountMenuIconWrapper,
   accountMenuWrapper,
 } from "./styles";
-import LanguageIcon from "@mui/icons-material/Language";
-import { Menu, useTheme } from "@mui/material";
 import { AccountMenuProps } from "./types";
 
 const AccountMenu: React.FC<AccountMenuProps> = ({

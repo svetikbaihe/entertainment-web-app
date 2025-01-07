@@ -1,10 +1,10 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import { signUpActions } from "@modules/auth/SignUp";
 import { useForm } from "react-hook-form";
 import { useIntl } from "react-intl";
-import { SCHEMA } from "./constants";
 import { useDispatch } from "react-redux";
-import { signUpActions } from "@modules/auth/SignUp";
 
+import { SCHEMA } from "./constants";
 import { FormValues } from "./types";
 
 const useContainer = () => {

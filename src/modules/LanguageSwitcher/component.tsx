@@ -1,11 +1,13 @@
 import type React from "react";
+
 import { Stack, Switch, Typography } from "@mui/material";
 import { FormattedMessage } from "react-intl";
+
 import useContainer from "./hook";
 
 const LanguageSwitcher: React.FC = () => {
   const { isUKLanguage, handleChangeLanguage } = useContainer();
-  
+
   return (
     <Stack direction="row" spacing={1} sx={{ alignItems: "center" }}>
       <Typography variant="caption">
