@@ -33,4 +33,9 @@ export const LAYOUT = {
     REDIRECT_TO: RoutesPath.HOME,
     ACCESS_ROLES: null,
   },
+  [LayoutKeys.AUTH_LAYOUT]: {
+    KEY: LayoutKeys.AUTH_LAYOUT,
+    PATH: LayoutPath[LayoutKeys.BASE_LAYOUT],
+    DISPLAY_NAME: LayoutKeys.AUTH_LAYOUT,
+  },
 };

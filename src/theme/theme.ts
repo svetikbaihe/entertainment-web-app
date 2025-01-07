@@ -162,6 +162,15 @@ export const theme = createTheme({
         },
       },
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "&.MuiTextField-root:not(.Mui-error)": {
+            borderBottom: "1px solid #5A698F",
+          },
+        },
+      },
+    },
     MuiInputAdornment: {
       styleOverrides: {
         root: {

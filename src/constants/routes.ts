@@ -61,4 +61,14 @@ export const ROUTES = {
     REDIRECT_TO: RoutesPath.HOME,
     ACCESS_ROLES: null,
   },
+  [RoutesKeys.LOGIN]: {
+    KEY: RoutesKeys.LOGIN,
+    PATH: RoutesPath[RoutesKeys.LOGIN],
+    DISPLAY_NAME: RoutesKeys.LOGIN,
+  },
+  [RoutesKeys.SIGN_UP]: {
+    KEY: RoutesKeys.SIGN_UP,
+    PATH: RoutesPath[RoutesKeys.SIGN_UP],
+    DISPLAY_NAME: RoutesKeys.SIGN_UP,
+  },
 };
