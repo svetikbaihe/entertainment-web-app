@@ -29,7 +29,7 @@ Users should be able to:
 - Search for relevant shows on all pages
 - **Bonus**: Create an auth flow
 
-### Screenshot
+### Screenshots
 
 ![Sign up_mobile](public/images/screenshots/sign-up_mobile.png)
 ![Login_mobile](public/images/screenshots/login_mobile.png)
