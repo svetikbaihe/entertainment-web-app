@@ -1,5 +1,4 @@
 export interface AccountMenuProps {
-  anchorEl: null | HTMLElement;
-  open: boolean;
-  onClose: VoidFunction;
+  avatarSrc: string;
+  avatarAlt: string;
 }

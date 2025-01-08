@@ -17,7 +17,7 @@ const DashboardLayout: React.FC = () => {
 
   return (
     <Box sx={dashboard(isDesktop)}>
-      <Sidebar avatarSrc="/images/image-avatar.png" avatarAlt="John Wons" />
+      <Sidebar />
       <Outlet />
     </Box>
   );

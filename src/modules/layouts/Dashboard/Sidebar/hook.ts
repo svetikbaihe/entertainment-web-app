@@ -1,14 +1,8 @@
-import React from "react";
-
 import { RoutesPath, RoutesKeys } from "@constants/routes";
 import { useMatches, useNavigate } from "react-router-dom";
 
 const useContainer = () => {
   const navigate = useNavigate();
-
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-
-  const open = Boolean(anchorEl);
 
   const matches = useMatches();
 
@@ -20,13 +14,6 @@ const useContainer = () => {
 
   const isActiveBookmarked =
     matches.at(-1)?.id === RoutesKeys.BOOKMARKED_MOVIES;
-
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   const handleToHome = () => {
     navigate(RoutesPath.HOME);
@@ -49,15 +36,11 @@ const useContainer = () => {
     isActiveMovies,
     isActiveTVSeries,
     isActiveBookmarked,
-    anchorEl,
-    open,
 
     handleToHome,
     handleToMovies,
     handleToTvSeries,
     handleToBookmarked,
-    handleClick,
-    handleClose,
   };
 };
 

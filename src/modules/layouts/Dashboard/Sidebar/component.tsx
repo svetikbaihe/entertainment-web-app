@@ -3,34 +3,28 @@ import type React from "react";
 import AccountMenu from "@modules/AccountMenu";
 import { Bookmark, LocalMovies, Tv } from "@mui/icons-material";
 import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
-import { AppBar, Avatar, Box, Button, IconButton } from "@mui/material";
+import { AppBar, Box, Button } from "@mui/material";
 
 import useContainer from "./hook";
 import {
-  avatar,
   btnContainer,
   sidebar,
   sidebarBtn,
   sidebarLogo,
   activePageBtn,
 } from "./styles";
-import { SidebarProps } from "./types";
 
-const Sidebar: React.FC<SidebarProps> = ({ avatarSrc, avatarAlt }) => {
+const Sidebar: React.FC = () => {
   const {
     isActiveBookmarked,
     isActiveHome,
     isActiveMovies,
     isActiveTVSeries,
-    anchorEl,
-    open,
 
     handleToBookmarked,
     handleToHome,
     handleToMovies,
     handleToTvSeries,
-    handleClick,
-    handleClose,
   } = useContainer();
   return (
     <AppBar component="aside" position="sticky" sx={sidebar}>
@@ -70,13 +64,7 @@ const Sidebar: React.FC<SidebarProps> = ({ avatarSrc, avatarAlt }) => {
         />
       </Box>
 
-      <Box sx={{ position: "relative" }}>
-        <IconButton onClick={handleClick}>
-          <Avatar alt={avatarAlt} src={avatarSrc} sx={avatar} />
-        </IconButton>
-
-        <AccountMenu anchorEl={anchorEl} open={open} onClose={handleClose} />
-      </Box>
+      <AccountMenu avatarSrc="/images/image-avatar.png" avatarAlt="John Wons" />
     </AppBar>
   );
 };

@@ -41,7 +41,7 @@ Users should be able to:
 
 - Solution URL:
   [GitHub](https://github.com/svetikbaihe/entertainment-web-app.git)
-- Live Site URL: [Vercel](https://your-live-site-url.com)
+- Live Site URL: [Vercel](https://entertainment-web-app-sgjk.vercel.app/login)
 
 ## Built with
 

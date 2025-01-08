@@ -1,21 +1,29 @@
+import { PopperPlacementType } from "@mui/material";
 import { Theme } from "@mui/material/styles";
+import { theme } from "@theme/theme";
 
-export const accountMenuWrapper = {
-  "&.MuiMenu-root": { top: "7px", left: "3px" },
+export const avatar = {
+  border: "1px solid #FFF",
+  width: "1.5rem",
+  height: "1.5rem",
+  [theme.breakpoints.up("sm")]: {
+    width: "2rem",
+    height: "2rem",
+  },
+  [theme.breakpoints.up("lg")]: {
+    width: "2.5rem",
+    height: "2.5rem",
+  },
 };
 
-export const accountMenu = (theme: Theme) => ({
+export const accountMenu = (theme: Theme, placement: PopperPlacementType) => ({
   backgroundColor: "#5A698F",
-  position: "absolute" as const,
-  borderRadius: "8px",
-  overflow: "visible" as const,
-  maxWidth: "3rem",
   "&::before": {
     content: '""',
     display: "block",
-    position: "absolute" as const,
-    top: 0,
-    right: 18,
+    position: "absolute",
+    top: placement === "top" ? "100%" : 0,
+    right: 20,
     width: "0.625rem",
     height: "0.625rem",
     backgroundColor: "#5A698F",
@@ -23,14 +31,13 @@ export const accountMenu = (theme: Theme) => ({
     zIndex: 0,
   },
   [theme.breakpoints.up("sm")]: {
-    maxWidth: "7.3rem",
-    "&.MuiMenu-paper::before": {
-      right: 22,
+    "&.MuiPaper-root::before": {
+      right: 35,
     },
   },
   [theme.breakpoints.up("lg")]: {
-    "&.MuiMenu-paper::before": {
-      right: 50,
+    "&.MuiPaper-root::before": {
+      right: 55,
     },
   },
 });

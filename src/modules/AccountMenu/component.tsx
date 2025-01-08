@@ -1,68 +1,114 @@
-import type React from "react";
+import * as React from "react";
 
 import useResponsive from "@hooks/useMediaQuery";
 import LanguageIcon from "@mui/icons-material/Language";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
-import { Menu, useTheme } from "@mui/material";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
+import {
+  Avatar,
+  Box,
+  IconButton,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import Grow from "@mui/material/Grow";
 import MenuItem from "@mui/material/MenuItem";
+import MenuList from "@mui/material/MenuList";
+import Paper from "@mui/material/Paper";
+import Popper from "@mui/material/Popper";
+import { theme } from "@theme/theme";
 
 import useContainer from "./hook";
 import {
   accountMenu,
   accountMenuIcon,
-  menuItem,
   accountMenuIconWrapper,
-  accountMenuWrapper,
+  avatar,
+  menuItem,
 } from "./styles";
 import { AccountMenuProps } from "./types";
 
-const AccountMenu: React.FC<AccountMenuProps> = ({
-  anchorEl,
-  open,
-  onClose,
-}) => {
+
+const AccountMenu: React.FC<AccountMenuProps> = ({ avatarAlt, avatarSrc }) => {
   const { isTablet } = useResponsive();
 
-  const theme = useTheme();
-
-  const { handleLogOut, handleToggleLanguage } = useContainer();
+  const {
+    anchorRef,
+    open,
+    handleLogOut,
+    handleToggleLanguage,
+    handleCloseMenu,
+    handleListKeyDown,
+    handleToggleMenu,
+  } = useContainer();
 
   return (
-    <Menu
-      anchorEl={anchorEl}
-      open={open}
-      onClick={onClose}
-      onClose={onClose}
-      sx={accountMenuWrapper}
-      slotProps={{
-        paper: {
-          elevation: 0,
-          sx: accountMenu(theme),
-        },
-      }}
-      transformOrigin={{ horizontal: "right", vertical: "top" }}
-      anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
-      variant="menu"
-    >
-      <MenuItem
-        disableRipple
-        onClick={handleToggleLanguage}
-        sx={menuItem(isTablet)}
+    <Box>
+      <IconButton
+        ref={anchorRef}
+        id="composition-button"
+        aria-controls={open ? "composition-menu" : undefined}
+        aria-expanded={open ? "true" : undefined}
+        aria-haspopup="true"
+        onClick={handleToggleMenu}
       >
-        <ListItemIcon sx={accountMenuIconWrapper}>
-          <LanguageIcon fontSize="small" sx={accountMenuIcon} />
-        </ListItemIcon>
-        <ListItemText>{isTablet && "EN | UA"}</ListItemText>
-      </MenuItem>
-      <MenuItem disableRipple onClick={handleLogOut} sx={menuItem(isTablet)}>
-        <ListItemIcon sx={accountMenuIconWrapper}>
-          <LogoutRoundedIcon fontSize="small" sx={accountMenuIcon} />
-        </ListItemIcon>
-        <ListItemText>{isTablet && "Log out"}</ListItemText>
-      </MenuItem>
-    </Menu>
+        <Avatar alt={avatarAlt} src={avatarSrc} sx={avatar} />
+      </IconButton>
+
+      <Popper
+        open={open}
+        anchorEl={anchorRef.current}
+        role={undefined}
+        placement="bottom"
+        transition
+        disablePortal
+      >
+        {({ TransitionProps, placement }) => (
+          <Grow
+            {...TransitionProps}
+            style={{
+              transformOrigin:
+                placement === "bottom" ? "left top" : "left bottom",
+            }}
+          >
+            <Paper sx={accountMenu(theme, placement)}>
+              <ClickAwayListener onClickAway={handleCloseMenu}>
+                <MenuList
+                  autoFocusItem={open}
+                  id="composition-menu"
+                  aria-labelledby="composition-button"
+                  onKeyDown={handleListKeyDown}
+                >
+                  <MenuItem
+                    disableRipple
+                    onClick={handleToggleLanguage}
+                    sx={menuItem(isTablet)}
+                  >
+                    <ListItemIcon sx={accountMenuIconWrapper}>
+                      <LanguageIcon fontSize="small" sx={accountMenuIcon} />
+                    </ListItemIcon>
+                    <ListItemText>{isTablet && "EN | UA"}</ListItemText>
+                  </MenuItem>
+                  <MenuItem
+                    disableRipple
+                    onClick={handleLogOut}
+                    sx={menuItem(isTablet)}
+                  >
+                    <ListItemIcon sx={accountMenuIconWrapper}>
+                      <LogoutRoundedIcon
+                        fontSize="small"
+                        sx={accountMenuIcon}
+                      />
+                    </ListItemIcon>
+                    <ListItemText>{isTablet && "Log out"}</ListItemText>
+                  </MenuItem>
+                </MenuList>
+              </ClickAwayListener>
+            </Paper>
+          </Grow>
+        )}
+      </Popper>
+    </Box>
   );
 };
 
